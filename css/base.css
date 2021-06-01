@@ -14,6 +14,8 @@ body {
   color: var(--dark-choco);
 }
 
+/* NAVBAR */
+
 .navbar,
 .navbar-expanded {
   background-color: var(--light-choco);
@@ -56,4 +58,24 @@ body {
 .nav-item p {
   align-self: center;
   margin-left: 0.5rem;
+}
+
+
+/* FOOTER */
+
+footer {
+  background-color: var(--dark-choco);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer img {
+  width: 1.5rem;
+  margin: 0 .5rem;
+}
+
+footer p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
