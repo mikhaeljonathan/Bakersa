@@ -158,6 +158,14 @@ main hr {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.bread:hover .seemore-arrow {
+  left: .5rem;
+}
+
+.bread:hover .seemore-text {
+  text-decoration: underline;
+}
+
 .bread img {
   width: 5rem;
   height: 5rem;
@@ -176,12 +184,13 @@ main hr {
 .bread-seemore {
   display: flex;
   position: absolute;
-  right: 1rem;
+  right: 1.5rem;
   bottom: 1rem;
 }
 
-.seemore {
-  margin-right: 0.5rem;
+.seemore-arrow {
+  position: relative;
+  margin-left: 0.5rem;
 }
 
 .bread-more {
@@ -192,3 +201,4 @@ main hr {
 .bread-more .dots {
   text-align: center;
 }
+
