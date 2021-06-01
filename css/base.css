@@ -1,7 +1,7 @@
 :root {
   --dark-choco: #453623;
   --light-choco: #fee9ce;
-  --light-grey: #C4C4C4;
+  --light-grey: #c4c4c4;
 }
 
 * {
@@ -17,8 +17,12 @@ body {
 /* NAVBAR */
 
 .navbar,
-.navbar-expanded {
+#navbar-expanded {
   background-color: var(--light-choco);
+}
+
+#navbar-expanded {
+  display: none;
 }
 
 .navbar {
@@ -28,7 +32,7 @@ body {
 #hamburger-menu {
   height: 1.5rem;
   align-self: center;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 .logo-title {
@@ -39,7 +43,7 @@ body {
   height: 80%;
 }
 
-.navbar-expanded hr {
+#navbar-expanded hr {
   border: none;
   border-top: 1px solid var(--dark-choco);
 }
@@ -60,6 +64,11 @@ body {
   margin-left: 0.5rem;
 }
 
+.hoverable:hover {
+  cursor: pointer;
+  background-color: var(--dark-choco);
+  color: white;
+}
 
 /* FOOTER */
 
@@ -72,7 +81,7 @@ footer {
 
 footer img {
   width: 1.5rem;
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
 }
 
 footer p {

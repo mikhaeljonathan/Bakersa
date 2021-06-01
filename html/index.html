@@ -7,8 +7,10 @@
     <title>Bakersa | Home</title>
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/home.css" />
-  </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <body>
+
+      <!-- NAVIGATION BAR -->
     <nav>
       <div class="navbar">
         <img
@@ -20,30 +22,33 @@
           <img src="../src/logo-banner.png" alt="Logo" id="logo-banner" />
         </div>
       </div>
-      <div class="navbar-expanded">
+      <div id="navbar-expanded">
         <hr />
-        <div class="nav-item">
+        <div class="nav-item hoverable">
           <img src="../src/home-icon.png" alt="Home" />
           <p>Home</p>
         </div>
         <hr />
-        <div class="nav-item">
+        <div class="nav-item hoverable">
           <img src="../src/classic-icon.png" alt="Classic" />
           <p>Classic Bread</p>
         </div>
         <hr />
-        <div class="nav-item">
+        <div class="nav-item hoverable">
           <img src="../src/custom-icon.png" alt="Custom" />
           <p>Custom Cake</p>
         </div>
         <hr />
-        <div class="nav-item">
+        <div class="nav-item hoverable">
           <img src="../src/checkout-icon.png" alt="Checkout" />
           <p>Checkout</p>
         </div>
         <hr />
       </div>
     </nav>
+
+
+    <!-- HEADER -->
     <header>
       <h1>Bakersa</h1>
       <h2>~ Est. 2001 ~</h2>
@@ -53,7 +58,11 @@
         <input type="text" placeholder="Search your nearest local stores..." />
       </div>
     </header>
+
+
+    <!-- MAIN -->
     <main>
+        <!-- NEWS -->
       <div class="news">
         <h2>What's New</h2>
         <div class="image-slider">
@@ -61,24 +70,32 @@
             src="../src/arrow-left-outline.png"
             alt="arrow-left"
             class="arrow"
+            id="arrow-left"
           />
           <img src="https://picsum.photos/400/200" alt="" class="news-image" />
+          <img src="https://picsum.photos/600/300" alt="" class="news-image" />
+          <img src="https://picsum.photos/800/400" alt="" class="news-image" />
+          <img src="https://picsum.photos/200/100" alt="" class="news-image" />
           <img
             src="../src/arrow-right-outline.png"
             alt="arrow-right"
             class="arrow"
+            id="arrow-right"
           />
         </div>
         <div class="dots">
-          <span class="dot dot-active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+          <span class="dot" onclick="displayNews(0)"></span>
+          <span class="dot" onclick="displayNews(1)"></span>
+          <span class="dot" onclick="displayNews(2)"></span>
+          <span class="dot" onclick="displayNews(3)"></span>
         </div>
       </div>
       <hr />
+
+      <!-- NEW BREADS -->
       <div class="new-breads">
         <h2>Our New Breads</h2>
+
         <div class="bread">
           <img src="../src/bread/bread1-banana-bread.jpg" alt="Bread 1" />
           <div class="bread-info">
@@ -125,6 +142,8 @@
         </div>
       </div>
     </main>
+
+    <!-- FOOTER -->
     <footer>
       <p>&copy; 2021 Bakersa</p>
       <div>
@@ -139,5 +158,6 @@
         /></a>
       </div>
     </footer>
+    <script src="../js/home.js"></script>
   </body>
 </html>
