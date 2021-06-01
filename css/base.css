@@ -14,9 +14,15 @@ body {
   color: var(--dark-choco);
 }
 
+a {
+  text-decoration: none;
+  color: var(--dark-choco);
+  display: block;
+}
+
 /* NAVBAR */
 
-.navbar,
+.navbar-title,
 #navbar-expanded {
   background-color: var(--light-choco);
 }
@@ -25,7 +31,7 @@ body {
   display: none;
 }
 
-.navbar {
+.navbar-title {
   display: flex;
 }
 
@@ -64,14 +70,17 @@ body {
   margin-left: 0.5rem;
 }
 
-.hoverable:hover {
-  cursor: pointer;
+a:hover {
   background-color: var(--dark-choco);
   color: white;
 }
 
+span.nav-item {
+  display: none;
+}
+
 #nav-home:hover img {
-  content: url("../src/home-icon-light.png");
+  content: url('../src/home-icon-light.png');
 }
 
 #nav-classic:hover img {
@@ -103,4 +112,71 @@ footer img {
 footer p {
   margin-bottom: 1rem;
   font-size: 1rem;
+}
+
+
+
+
+
+
+/* DESKTOP */
+
+@media screen and (min-width: 600px) {
+  #hamburger-menu {
+    display: none;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  nav hr {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: flex-start;
+    margin: 1rem;
+  }
+
+  #navbar-expanded {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  span.nav-item {
+    display: flex;
+    align-content: center;
+    cursor: pointer;
+    height: 100%;
+    margin: 0;
+  }
+
+  .products {
+    background-color: var(--light-choco);
+    position: absolute;
+    right: 5rem;
+    top: 5rem;
+    margin: 0;
+    display: none;
+  }
+
+  .products a {
+    padding: 1rem;
+  }
+
+  .products .nav-item {
+    margin: 0;
+  }
+
+  .dropdown:hover .products {
+    display: block;
+  }
+
+  .dropdown:hover span.nav-item{
+    background-color: var(--dark-choco);
+    color: white;
+  }
+  
 }

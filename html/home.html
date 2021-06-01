@@ -12,7 +12,7 @@
 
       <!-- NAVIGATION BAR -->
     <nav>
-      <div class="navbar">
+      <div class="navbar-title">
         <img
           src="../src/hamburger-menu-icon.png"
           alt="Menu"
@@ -22,27 +22,50 @@
           <img src="../src/logo-banner.png" alt="Logo" id="logo-banner" />
         </div>
       </div>
+
       <div id="navbar-expanded">
         <hr />
-        <div class="nav-item hoverable" id="nav-home">
-          <img src="../src/home-icon.png" alt="Home" />
-          <p>Home</p>
+        <a href="#">
+          <div class="nav-item" id="nav-home">
+            <img src="../src/home-icon.png" alt="Home" />
+            <p>Home</p>
+          </div>
+        </a>
+
+        <div class="dropdown">
+          <span class="nav-item">
+            <p>&nbsp; Products ▼ &nbsp;</p>
+          </span>
+          
+          <div class="products">
+            <hr />
+            <a href="classic.html">
+              <div class="nav-item" id="nav-classic">
+                <img src="../src/classic-icon.png" alt="Classic" />
+                <p>Classic Bread</p>
+              </div>
+            </a>
+  
+            <hr />
+            <a href="custom.html">
+              <div class="nav-item" id="nav-custom">
+                <img src="../src/custom-icon.png" alt="Custom" />
+                <p>Custom Cake</p>
+              </div>
+            </a>
+          </div>
         </div>
+        
+        
+        
         <hr />
-        <div class="nav-item hoverable" id="nav-classic">
-          <img src="../src/classic-icon.png" alt="Classic" />
-          <p>Classic Bread</p>
-        </div>
-        <hr />
-        <div class="nav-item hoverable" id="nav-custom">
-          <img src="../src/custom-icon.png" alt="Custom" />
-          <p>Custom Cake</p>
-        </div>
-        <hr />
-        <div class="nav-item hoverable" id="nav-checkout">
-          <img src="../src/checkout-icon.png" alt="Checkout" />
-          <p>Checkout</p>
-        </div>
+        <a href="checkout.html">
+          <div class="nav-item hoverable" id="nav-checkout">
+            <img src="../src/checkout-icon.png" alt="Checkout" />
+            <p>Checkout</p>
+          </div>
+        </a>
+        
         <hr />
       </div>
     </nav>
