@@ -70,6 +70,22 @@ body {
   color: white;
 }
 
+#nav-home:hover img {
+  content: url("../src/home-icon-light.png");
+}
+
+#nav-classic:hover img {
+  content: url("../src/classic-icon-light.png");
+}
+
+#nav-custom:hover img {
+  content: url("../src/custom-icon-light.png");
+}
+
+#nav-checkout:hover img {
+  content: url("../src/checkout-icon-light.png");
+}
+
 /* FOOTER */
 
 footer {
