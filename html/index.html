@@ -5,14 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bakersa | Home</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
     <link rel="stylesheet" href="../css/home.css" />
   </head>
   <body>
     <nav>
       <div class="navbar">
-        <img src="../src/logo.png" alt="Menu" id="hamburger-menu" />
+        <img
+          src="../src/hamburger-menu-icon.png"
+          alt="Menu"
+          id="hamburger-menu"
+        />
         <div class="nav-item logo-title">
-          <img src="../src/logo-banner.png" alt="Logo" />
+          <img src="../src/logo-banner.png" alt="Logo" id="logo-banner" />
         </div>
       </div>
       <div class="navbar-expanded">
@@ -44,14 +49,35 @@
       <h2>~ Est. 2001 ~</h2>
       <h3>Your favourite bakery in town</h3>
       <div class="search-stores">
+        <img src="../src/search-icon.png" alt="Search" />
         <input type="text" placeholder="Search your nearest local stores..." />
       </div>
     </header>
     <main>
-      <div>
+      <div class="news">
         <h2>What's New</h2>
+        <div class="image-slider">
+          <img
+            src="../src/arrow-left-outline.png"
+            alt="arrow-left"
+            class="arrow"
+          />
+          <img src="https://picsum.photos/400/200" alt="" class="news-image"/>
+          <img
+            src="../src/arrow-right-outline.png"
+            alt="arrow-right"
+            class="arrow"
+          />
+        </div>
+        <div class="dots">
+            <span class="dot dot-active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
       </div>
-      <div>
+      <hr />
+      <div class="new-breads">
         <h2>Our New Breads</h2>
         <div>
           <img src="src/bread-1.png" alt="Bread1" />

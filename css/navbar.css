@@ -1,0 +1,59 @@
+:root {
+  --dark-choco: #453623;
+  --light-choco: #fee9ce;
+  --light-grey: #C4C4C4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--dark-choco);
+}
+
+.navbar,
+.navbar-expanded {
+  background-color: var(--light-choco);
+}
+
+.navbar {
+  display: flex;
+}
+
+#hamburger-menu {
+  height: 1.5rem;
+  align-self: center;
+  margin-left: .5rem;
+}
+
+.logo-title {
+  width: 100%;
+}
+
+#logo-banner {
+  height: 80%;
+}
+
+.navbar-expanded hr {
+  border: none;
+  border-top: 1px solid var(--dark-choco);
+}
+
+.nav-item {
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+}
+
+.nav-item img {
+  height: 50%;
+  align-self: center;
+}
+
+.nav-item p {
+  align-self: center;
+  margin-left: 0.5rem;
+}
