@@ -109,5 +109,14 @@ main button:hover {
 
 main section {
   position: relative;
+  display: none;
 }
 
+.section-active{
+  display: block;
+}
+
+/* CREAM */
+.cake-cream {
+  z-index: 1000;
+}
