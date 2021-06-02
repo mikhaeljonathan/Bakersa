@@ -153,64 +153,6 @@ main hr {
   font-size: 2rem;
 }
 
-.bread {
-  cursor: pointer;
-  display: flex;
-  position: relative;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 1rem;
-  border-radius: 1rem;
-  margin: 2rem 0;
-}
-
-.bread:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.bread:hover .seemore-arrow {
-  left: .5rem;
-}
-
-.bread:hover .seemore-text {
-  text-decoration: underline;
-}
-
-.bread img {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 0.75rem;
-}
-
-.bread-info {
-  margin-left: 1rem;
-  align-self: center;
-}
-
-.bread-info h3 {
-  margin-bottom: 0.5rem;
-}
-
-.bread-seemore {
-  display: flex;
-  position: absolute;
-  right: 1.5rem;
-  bottom: 1rem;
-}
-
-.seemore-arrow {
-  position: relative;
-  margin-left: 0.5rem;
-}
-
-.bread-more {
-  display: block;
-  text-align: center;
-}
-
-.bread-more .dots {
-  text-align: center;
-}
-
 
 
 
@@ -224,3 +166,31 @@ main hr {
 
 /* DESKTOP */
 
+@media screen and (min-width: 600px) {
+  header {
+    text-align: left;
+  }
+
+  header h1 {
+    font-size: 3rem;
+    letter-spacing: 2rem;
+  }
+
+  header h2 {
+    font-size: 2rem;
+  }
+
+  header h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .search-stores {
+    width: 50%;
+  }
+
+  .news-image {
+    width: 60%;
+  }
+
+}
