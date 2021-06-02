@@ -1,0 +1,31 @@
+header {
+  background-image: url("../src/home-banner.jpg");
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5rem;
+  margin-top: 1rem;
+}
+
+header h2 {
+  font-size: 1rem;
+  letter-spacing: 0.25rem;
+  margin: 2.5rem 0;
+}
+
+header h3 {
+  font-size: .75rem;
+  letter-spacing: 0.125rem;
+}

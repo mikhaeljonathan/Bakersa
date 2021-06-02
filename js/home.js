@@ -1,7 +1,3 @@
-$('#hamburger-menu').click(function () {
-    $('#navbar-expanded').slideToggle('slow');
-});
-
 $('#arrow-left').click(function () {
     displayNews(currentNews - 1);
 });

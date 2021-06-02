@@ -71,7 +71,7 @@ a {
   margin-left: 0.5rem;
 }
 
-a:hover {
+#navbar-expanded a:hover {
   background-color: var(--dark-choco);
   color: white;
 }
