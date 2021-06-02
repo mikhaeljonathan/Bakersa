@@ -7,6 +7,7 @@ header {
   background-repeat: no-repeat;
   color: white;
   text-align: center;
+  font-family: 'Vollkorn', serif;
 }
 
 .overlay {
@@ -110,28 +111,6 @@ main {
 
 #arrow-left:hover {
   content: url('../src/arrow-left-fill.png');
-}
-
-.dots {
-  margin: 1rem 0;
-}
-
-.dot {
-  height: 0.75rem;
-  width: 0.75rem;
-  border-radius: 50%;
-  margin: 0 0.25rem;
-  background-color: var(--light-grey);
-  display: inline-block;
-  cursor: pointer;
-}
-
-.dot:hover {
-  background-color: var(--dark-choco);
-}
-
-.dot-active {
-  background-color: var(--dark-choco);
 }
 
 main hr {

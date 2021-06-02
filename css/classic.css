@@ -5,6 +5,7 @@ header {
   background-repeat: no-repeat;
   color: white;
   text-align: center;
+  font-family: 'Vollkorn', serif;
 }
 
 .overlay {
@@ -28,4 +29,8 @@ header h2 {
 header h3 {
   font-size: .75rem;
   letter-spacing: 0.125rem;
+}
+
+main {
+  padding: 2rem;
 }

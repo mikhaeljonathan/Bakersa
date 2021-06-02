@@ -1,7 +1,7 @@
 .breads {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
 }
 
 .bread {
@@ -11,8 +11,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 1rem;
   border-radius: 1rem;
-  margin: 1rem 1rem;
-  width: 100%;
+  margin: .5rem;
 }
 
 .bread:hover {
@@ -63,9 +62,31 @@
   text-align: center;
 }
 
+.dots {
+  margin: 1rem 0;
+}
+
+.dot {
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 50%;
+  margin: 0 0.25rem;
+  background-color: var(--light-grey);
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot:hover {
+  background-color: var(--dark-choco);
+}
+
+.dot-active {
+  background-color: var(--dark-choco);
+}
+
 /* DESKTOP */
 @media screen and (min-width: 600px) {
-  .bread {
+  /* .bread {
     width: 45%;
-  }
+  } */
 }
