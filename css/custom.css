@@ -5,7 +5,7 @@ header {
   background-repeat: no-repeat;
   color: white;
   text-align: center;
-  font-family: 'Vollkorn', serif;
+  font-family: "Vollkorn", serif;
 }
 
 .overlay {
@@ -14,9 +14,9 @@ header {
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
-  letter-spacing: 1.5rem;
+  letter-spacing: 2rem;
   margin-top: 1rem;
 }
 
@@ -28,31 +28,7 @@ header h2 {
 }
 
 header h3 {
-  font-size: .75rem;
+  font-size: 0.75rem;
   letter-spacing: 0.125rem;
   font-weight: 100;
-}
-
-main {
-  padding: 2rem;
-}
-
-/* DESKTOP */
-
-@media screen and (min-width: 600px) {
-  header h1 {
-    font-size: 3rem;
-    letter-spacing: 2rem;
-    margin-top: 2rem;
-  }
-
-  header h2 {
-    font-size: 1.5rem;
-    margin: 5rem 0;
-  }
-
-  header h3 {
-    font-size: 1rem;
-    letter-spacing: .5rem;
-  }
 }
