@@ -6,10 +6,12 @@ header {
   color: white;
   text-align: center;
   font-family: 'Vollkorn', serif;
+  height: 70vh;
 }
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
   padding: 3rem;
 }
 

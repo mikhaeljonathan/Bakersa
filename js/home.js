@@ -27,4 +27,4 @@ let displayNews = function (n) {
     dots[n].classList.add('dot-active');
 }
 
-displayNews(0);
+displayNews(currentNews);

@@ -84,13 +84,20 @@
 
     <!-- MAIN -->
     <main>
-        <section class="choose-flavor">
+        <section id="choose-flavor">
             <h2>Choose the Flavor</h2>
             <div class="image-slider">
-                <img src="../src/arrow-left-outline.png" alt="Arrow Left">
-                <img src="../src/vanillacake.png" alt="Vanilla Cake">
-                
+                <img src="../src/arrow-left-outline.png" alt="Arrow Left" class="arrow" id="arrow-left">
+                <div class="cake-image">
+                  <img src="../src/plainmarble.png" alt="Plate" class="plain-marble">
+                  <img src="../src/strawberrycake.png" alt="Strawberry Cake" class="cake" id="strawberry-cake">
+                  <img src="../src/vanillacake.png" alt="Vanilla Cake" class="cake cake-active" id="vanilla-cake">
+                  <img src="../src/chococake.png" alt="Chocolate Cake" class="cake" id="chocolate-cake">
+                </div>
+                <img src="../src/arrow-right-outline.png" alt="Arrow Right" class="arrow" id="arrow-right">
             </div>
+            <h3 id="cake-flavor-title">Vanilla</h3>
+            <button id="choose-flavor-next">Next</button>
         </section>
     </main>
 
@@ -110,5 +117,6 @@
       </div>
     </footer>
     <script src="../js/base.js"></script>
+    <script src="../js/custom.js"></script>
   </body>
 </html>
