@@ -1,0 +1,69 @@
+.information,
+.order {
+  padding: 2rem;
+}
+
+.information {
+    margin-bottom: 2rem;
+}
+
+main h2,
+main h3,
+.rating {
+  margin-bottom: 1rem;
+}
+
+main h2 {
+  font-size: 2rem;
+}
+
+main h3 {
+  font-weight: 100;
+}
+
+.rating {
+    width: 50%;
+}
+
+.rating img {
+    width: 15%;
+}
+
+.order {
+    position: relative;
+}
+
+.stocks {
+    display: flex;
+}
+
+.stocks img {
+    width: 3rem;
+    cursor: pointer;
+}
+
+#stock {
+    align-self: center;
+    margin: 0 .5rem;
+    font-size: 1.25rem;
+}
+
+.order button {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    background-color: var(--teal);
+    color: white;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: .125rem;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);;
+}
+
+.order button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}

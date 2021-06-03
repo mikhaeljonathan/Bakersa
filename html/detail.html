@@ -1,12 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bakersa</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/detail.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;700&family=Vollkorn:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+      <!-- NAVBAR -->
+    <nav>
+      <div class="navbar-title">
+        <img
+          src="../src/hamburger-menu-icon.png"
+          alt="Menu"
+          id="hamburger-menu"
+        />
+        <div class="nav-item logo-title">
+          <img src="../src/logo-banner.png" alt="Logo" id="logo-banner" />
+        </div>
+      </div>
+
+      <div id="navbar-expanded">
+        <hr />
+        <a href="home.html">
+          <div class="nav-item" id="nav-home">
+            <img src="../src/home-icon.png" alt="Home" />
+            <p>Home</p>
+          </div>
+        </a>
+
+        <div class="dropdown">
+          <span class="nav-item">
+            <p>&nbsp; Products ▼ &nbsp;</p>
+          </span>
+
+          <div class="products">
+            <hr />
+            <a href="classic.html">
+              <div class="nav-item" id="nav-classic">
+                <img src="../src/classic-icon.png" alt="Classic" />
+                <p>Classic Bread</p>
+              </div>
+            </a>
+
+            <hr />
+            <a href="custom.html">
+              <div class="nav-item" id="nav-custom">
+                <img src="../src/custom-icon.png" alt="Custom" />
+                <p>Custom Cake</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <hr />
+        <a href="checkout.html">
+          <div class="nav-item hoverable" id="nav-checkout">
+            <img src="../src/checkout-icon.png" alt="Checkout" />
+            <p>Checkout</p>
+          </div>
+        </a>
+
+        <hr />
+      </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main>
+        <img src="../src/bread/bread1-banana-bread.jpg" alt="Bread 1" width="100%">
+        <div class="information">
+            <h2>Bread 1</h2>
+            <h3>Rp 10.000,00</h3>
+            <div class="rating">
+                <img src="../src/star.jpg" alt="Star">
+                <img src="../src/star.jpg" alt="Star">
+                <img src="../src/star.jpg" alt="Star">
+                <img src="../src/star.jpg" alt="Star">
+                <img src="../src/star.jpg" alt="Star">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.</p>
+        </div>
+        <div class="order">
+            <div class="stocks">
+                <img src="../src/star.jpg" alt="Star">
+                <p id="stock">0</p>
+                <img src="../src/star.jpg" alt="Star">
+            </div>
+            <button>Add to Cart</button>
+        </div>
+    </main> 
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2021 Bakersa</p>
+        <div class="socmed">
+          <a href="https://www.instagram.com/"
+            ><img src="../src/instagram.png" alt="Instagram"
+          /></a>
+          <a href="https://facebook.com"
+            ><img src="../src/facebook.png" alt="Facebook"
+          /></a>
+          <a href="https://twitter.com">
+            <img src="../src/twitter.png" alt="Twitter"
+          /></a>
+        </div>
+      </footer>
+
+      <script src="../js/base.js"></script>
+  </body>
 </html>
