@@ -65,6 +65,10 @@ main h2 {
   content: url('../src/arrow-right-fill.png');
 }
 
+.cake-image {
+  positioN: relative;
+}
+
 .cake-image img {
   width: 15rem;
   margin: 2rem;
@@ -118,5 +122,7 @@ main section {
 
 /* CREAM */
 .cake-cream {
-  z-index: 1000;
+  position: absolute;
+  z-index: 100;
+  left: 0;
 }

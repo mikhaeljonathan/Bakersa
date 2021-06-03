@@ -3,11 +3,11 @@
 let flavors = ['strawberry', 'vanilla', 'chocolate'];
 let colors = ['#C54346', '#EAA52E', '#6D2821'];
 
-$('#arrow-right').click(function () {
+$('#arrow-right-flavor').click(function () {
     displayCakeFlavor(currentFlavor + 1);
 });
 
-$('#arrow-left').click(function () {
+$('#arrow-left-flavor').click(function () {
     displayCakeFlavor(currentFlavor - 1);
 });
 
@@ -42,9 +42,50 @@ $('#choose-flavor-next').click(function () {
 $('#choose-flavor').addClass('section-active');
 displayCakeFlavor(currentFlavor);
 
+
+
+
 // ADD CREAM
 let isAddCream = true;
 function addCream() {
     let curFLavorName = flavors[currentFlavor];
-    document.querySelector('#add-cream-image').insertAdjacentHTML('afterbegin', `<img src="../src/${curFLavorName}cake.png" alt="${curFLavorName} Cake" class="cake cake-active" id="${curFLavorName}-cake" style='position: absolute; z-index: -50;'>`);
+    $(`#${curFLavorName}-cake-cream`).addClass('cake-active');
 }
+
+$('#arrow-left-cream').click(function(){
+    isAddCream = false;
+
+    $('#add-cream-title').html('No... :(');
+    $('#arrow-right-cream').css('visibility', 'visible');
+    $('#arrow-left-cream').css('visibility', 'hidden');
+    $('#cream-price').css('visibility', 'hidden');
+
+    $('#cake-cream').animate({
+        opacity: '0'
+    }, 'slow');
+
+});
+
+$('#arrow-right-cream').click(function(){
+    isAddCream = true;
+
+    $('#add-cream-title').html('Yes!');
+    $('#arrow-right-cream').css('visibility', 'hidden');
+    $('#arrow-left-cream').css('visibility', 'visible');
+    $('#cream-price').css('visibility', 'visible');
+
+    $('#cake-cream').animate({
+        opacity: '1'
+    }, 'slow');
+});
+
+$('#add-cream-next').click(function(){
+    $('#add-cream').removeClass('section-active');
+    $('#add-message').addClass('section-active');
+});
+
+$('#arrow-right-cream').css('visibility', 'hidden');
+
+
+
+// ADD MESSAGE
