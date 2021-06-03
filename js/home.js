@@ -28,3 +28,25 @@ let displayNews = function (n) {
 }
 
 displayNews(currentNews);
+
+let newBreadId = [0, 1, 2];
+let newBreadTitles = ['Roti 1', 'Roti 2', 'Roti 3'];
+let newBreadPrices = ['20.000', '20.000', '20.000'];
+
+for (let i = 0; i < newBreadTitles.length; i++){
+    document.getElementsByClassName('breads')[0].insertAdjacentHTML('afterbegin', 
+    `<div class="bread" onclick="goDetail(${newBreadId[i]})">
+        <img src="../src/breads/bread${i + 1}.jpg" alt="Bread ${i + 1}" />
+        <div class="bread-info">
+            <h3>${newBreadTitles[i]}</h3>
+            <p>Rp ${newBreadPrices[i]},00</p>
+        </div>
+        <div class="bread-seemore">
+            <p class="seemore-text">See<br>more</p>
+        </div>
+    </div>`);
+}
+
+function goDetail(idx){
+    window.location.href = `detail.html?id=${idx}`;
+}
