@@ -1,22 +1,25 @@
+function getIndex(n){
+    return (n < 0) ? flavors.length - 1 : n % flavors.length;
+}
+
 // CHOOSE FLAVOR
 
 let flavors = ['strawberry', 'vanilla', 'chocolate'];
 let colors = ['#C54346', '#EAA52E', '#6D2821'];
 
 $('#arrow-right-flavor').click(function () {
-    displayCakeFlavor(currentFlavor + 1);
+    currentFlavor = displayCakeFlavor(currentFlavor + 1);
 });
 
 $('#arrow-left-flavor').click(function () {
-    displayCakeFlavor(currentFlavor - 1);
+    currentFlavor = displayCakeFlavor(currentFlavor - 1);
 });
 
 let currentFlavor = 1;
 let displayCakeFlavor = function (n) {
     let cakes = document.getElementsByClassName('cake-flavor');
 
-    n = (n < 0) ? cakes.length - 1 : n % cakes.length;
-    currentFlavor = n;
+    n = getIndex(n);
 
     for (let i = 0; i < cakes.length; i++) {
         cakes[i].classList.remove('cake-active');
@@ -30,6 +33,12 @@ let displayCakeFlavor = function (n) {
 
     $('#cake-flavor-title').html(flavors[n]).css('color', colors[n]);
 
+    let left = flavors[getIndex(n - 1)];
+    let right = flavors[getIndex(n + 1)];
+    document.getElementById('left-flavor').setAttribute('src', `../src/${left}cake.png`);
+    document.getElementById('right-flavor').setAttribute('src', `../src/${right}cake.png`);
+
+    return n;
 }
 
 $('#choose-flavor-next').click(function () {

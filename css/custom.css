@@ -33,8 +33,6 @@ header h3 {
   font-weight: 100;
 }
 
-
-
 /* MAIN */
 main {
   text-align: center;
@@ -58,20 +56,34 @@ main h2 {
 }
 
 .arrow-left:hover {
-  content: url('../src/arrow-left-fill.png');
+  content: url("../src/arrow-left-fill.png");
 }
 
 .arrow-right:hover {
-  content: url('../src/arrow-right-fill.png');
+  content: url("../src/arrow-right-fill.png");
 }
 
 .cake-image {
-  positioN: relative;
+  position: relative;
 }
 
 .cake-image img {
   width: 15rem;
   margin: 2rem;
+}
+
+.cake-faded {
+  width: 10rem;
+  display: grid;
+  margin: 2rem;
+  place-items: center;
+  position: relative;
+  opacity: .7;
+  display: none;
+}
+
+.cake-faded img{
+  width: 100%;
 }
 
 .plain-marble {
@@ -95,14 +107,14 @@ main button {
   background-color: var(--teal);
   color: white;
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: .125rem;
+  letter-spacing: 0.125rem;
   border: none;
   position: absolute;
   right: 0;
-  bottom: -.5rem;
+  bottom: -0.5rem;
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -116,7 +128,7 @@ main section {
   display: none;
 }
 
-.section-active{
+.section-active {
   display: block;
 }
 
@@ -160,7 +172,6 @@ main section {
   margin-top: 2rem;
 }
 
-
 /* FINISH */
 .cake-message-container {
   height: 100%;
@@ -177,6 +188,13 @@ main section {
   text-align: center;
   font-weight: bold;
   text-shadow: 2px 2px 6px #000000;
-  font-family: 'Cookie', cursive;
+  font-family: "Cookie", cursive;
   font-size: 1.5rem;
+}
+
+/* DESKTOP */
+@media screen and (min-width: 700px) {
+  .cake-faded {
+    display: grid;
+  }
 }
