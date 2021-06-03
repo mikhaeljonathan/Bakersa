@@ -143,7 +143,8 @@
 
       <section id="add-message">
         <h2>Add a Message</h2>
-        <div class="image-slider">
+        <div class="add-message-container">
+          <div class="image-slider">
             <div class="cake-image" >
               <img src="../src/plainmarble.png" alt="Plate" class="plain-marble">
               <img src="../src/strawberrycake.png" alt="Strawberry Cake" class="cake cake-message" id="strawberry-cake-message">
@@ -151,11 +152,14 @@
               <img src="../src/chocolatecake.png" alt="Chocolate Cake" class="cake cake-message" id="chocolate-cake-message">
               <img src="../src/cream.png" alt="Cream" class="cream" id="cake-cream-message">
             </div>
+          </div>
+          <div class="input-message">
+            <input type="text" placeholder="Add messages here..." id="cake-input-message">
+            <p>Pick the color:</p>
+            <input type="color" id="cake-input-message-color">
+          </div>
         </div>
-        <div class="input-message">
-          <input type="text" placeholder="Add messages here..." id="cake-input-message">
-          <input type="color" id="cake-input-message-color">
-        </div>
+        
         <button id="add-message-finish" class="wide-button">Finish</button>
         <button id="add-message-previous" class="wide-button">Previous</button>
       </section>

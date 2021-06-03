@@ -78,11 +78,11 @@ main h2 {
   margin: 2rem;
   place-items: center;
   position: relative;
-  opacity: .7;
+  opacity: 0.7;
   display: none;
 }
 
-.cake-faded img{
+.cake-faded img {
   width: 100%;
 }
 
@@ -177,6 +177,10 @@ main section {
   margin-top: 2rem;
 }
 
+.input-message p {
+  display: none;
+}
+
 /* FINISH */
 .cake-message-container {
   height: 100%;
@@ -203,7 +207,45 @@ main section {
     display: grid;
   }
 
-  .cream {
-    
+  .add-message-container {
+    display: flex;
+    padding-bottom: 3rem;
+  }
+
+  .input-message {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+  }
+
+  .input-message p {
+    display: block;
+    margin-top: 3rem;
+  }
+
+  #cake-input-message {
+    margin: 0;
+    margin-top: 3rem;
+  }
+
+  #cake-input-message-color {
+    margin-top: 1rem;
+  }
+
+  .wide-button {
+    position: absolute;
+    width: inherit;
+  }
+
+  #add-message-previous {
+    left: 0;
+  }
+
+  #cake-finish {
+    padding-bottom: 3rem;
+  }
+
+  #cake-finish-previous {
+    left: 0;
   }
 }
