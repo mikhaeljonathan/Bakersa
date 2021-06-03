@@ -11,7 +11,7 @@ header {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
   padding: 4rem;
 }
@@ -165,6 +165,10 @@ main hr {
   header h3 {
     font-size: 1.5rem;
     letter-spacing: 0.5rem;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
   .search-stores {

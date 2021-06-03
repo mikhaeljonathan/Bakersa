@@ -1,6 +1,6 @@
 header {
-  background-image: url("../src/home-banner.jpg");
-  background-position: right;
+  background-image: url("../src/classic-bread-banner2.jpg");
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
@@ -9,7 +9,7 @@ header {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   height: 100%;
   padding: 4rem;
 }

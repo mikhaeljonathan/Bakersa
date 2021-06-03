@@ -1,6 +1,6 @@
 header {
-  background-image: url("../src/home-banner.jpg");
-  background-position: right;
+  background-image: url("../src/custom-cake-banner.jpg");
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
@@ -9,8 +9,8 @@ header {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 3rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 4rem;
 }
 
 header h1 {
@@ -24,7 +24,7 @@ header h2 {
   font-size: 1rem;
   letter-spacing: 0.25rem;
   font-weight: 100;
-  margin: 2.5rem 0;
+  margin: 3rem 0;
 }
 
 header h3 {
@@ -202,6 +202,25 @@ main section {
 }
 
 /* DESKTOP */
+@media screen and (min-width: 500px) {
+  header h1 {
+    font-size: 3rem;
+    letter-spacing: 3rem;
+    margin-top: 2rem;
+  }
+
+  header h2 {
+    font-size: 1.5rem;
+    margin: 5rem 0;
+  }
+
+  header h3 {
+    font-size: 1rem;
+    letter-spacing: .25rem;
+  }
+}
+
+
 @media screen and (min-width: 700px) {
   .cake-faded {
     display: grid;
