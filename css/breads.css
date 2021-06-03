@@ -83,10 +83,3 @@
 .dot-active {
   background-color: var(--dark-choco);
 }
-
-/* DESKTOP */
-@media screen and (min-width: 600px) {
-  /* .bread {
-    width: 45%;
-  } */
-}

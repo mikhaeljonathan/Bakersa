@@ -40,7 +40,7 @@ main {
 
 /* DESKTOP */
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
   header h1 {
     font-size: 3rem;
     letter-spacing: 2rem;

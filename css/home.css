@@ -148,7 +148,7 @@ main hr {
 
 /* DESKTOP */
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
   header {
     text-align: left;
   }
