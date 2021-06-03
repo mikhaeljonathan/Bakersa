@@ -1,5 +1,5 @@
 header {
-  background-image: url("../src/custom-cake-banner.jpg");
+  background-image: url("../src/banners/custom-cake-banner.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -56,11 +56,11 @@ main h2 {
 }
 
 .arrow-left:hover {
-  content: url("../src/arrow-left-fill.png");
+  content: url("../src/icons/arrow-left-fill.png");
 }
 
 .arrow-right:hover {
-  content: url("../src/arrow-right-fill.png");
+  content: url("../src/icons/arrow-right-fill.png");
 }
 
 .cake-image {

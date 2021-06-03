@@ -1,7 +1,7 @@
 /* HEADER */
 
 header {
-  background-image: url("../src/home-banner.jpg");
+  background-image: url("../src/banners/home-banner.jpg");
   background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
@@ -109,11 +109,11 @@ main {
 }
 
 #arrow-right:hover {
-  content: url('../src/arrow-right-fill.png');
+  content: url('../src/icons/arrow-right-fill.png');
 }
 
 #arrow-left:hover {
-  content: url('../src/arrow-left-fill.png');
+  content: url('../src/icons/arrow-left-fill.png');
 }
 
 main hr {

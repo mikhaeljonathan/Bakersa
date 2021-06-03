@@ -35,8 +35,8 @@ let displayCakeFlavor = function (n) {
 
     let left = flavors[getIndex(n - 1)];
     let right = flavors[getIndex(n + 1)];
-    document.getElementById('left-flavor').setAttribute('src', `../src/${left}cake.png`);
-    document.getElementById('right-flavor').setAttribute('src', `../src/${right}cake.png`);
+    document.getElementById('left-flavor').setAttribute('src', `../src/cakes/${left}cake.png`);
+    document.getElementById('right-flavor').setAttribute('src', `../src/cakes/${right}cake.png`);
 
     return n;
 }
@@ -66,8 +66,8 @@ function displayCakeCream() {
 
     $(`#${curFLavorName}-cake-cream`).addClass('cake-active');
 
-    document.getElementById('left-cream').setAttribute('src', `../src/${curFLavorName}cake.png`);
-    document.getElementById('right-cream').setAttribute('src', `../src/${curFLavorName}cake.png`);
+    document.getElementById('left-cream').setAttribute('src', `../src/cakes/${curFLavorName}cake.png`);
+    document.getElementById('right-cream').setAttribute('src', `../src/cakes/${curFLavorName}cake.png`);
 }
 
 $('#arrow-left-cream').click(function () {
