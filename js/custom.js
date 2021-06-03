@@ -152,3 +152,9 @@ function displayCakeFinish() {
 
     $('#cake-price').html(`Rp ${isAddCream ? '110' : '100'}.000,00`);
 }
+
+$('#cake-finish-previous').click(function(){
+    $('#cake-finish').removeClass('section-active');
+    $('#add-message').addClass('section-active');
+    displayCakeFinish();
+});
