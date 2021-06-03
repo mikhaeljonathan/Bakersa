@@ -140,6 +140,11 @@ main section {
   top: 0;
 }
 
+.cake-faded .cream {
+  left: inherit;
+  top: inherit;
+}
+
 #add-cream-before {
   left: 0;
 }
@@ -196,5 +201,9 @@ main section {
 @media screen and (min-width: 700px) {
   .cake-faded {
     display: grid;
+  }
+
+  .cream {
+    
   }
 }

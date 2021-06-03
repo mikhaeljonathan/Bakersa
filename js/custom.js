@@ -65,6 +65,9 @@ function displayCakeCream() {
     }
 
     $(`#${curFLavorName}-cake-cream`).addClass('cake-active');
+
+    document.getElementById('left-cream').setAttribute('src', `../src/${curFLavorName}cake.png`);
+    document.getElementById('right-cream').setAttribute('src', `../src/${curFLavorName}cake.png`);
 }
 
 $('#arrow-left-cream').click(function () {
@@ -74,6 +77,8 @@ $('#arrow-left-cream').click(function () {
     $('#arrow-right-cream').css('visibility', 'visible');
     $('#arrow-left-cream').css('visibility', 'hidden');
     $('#cream-price').css('visibility', 'hidden');
+    $('#cake-faded-left').css('visibility', 'hidden');
+    $('#cake-faded-right').css('visibility', 'visible');
 
     $('#cake-cream').animate({
         opacity: '0'
@@ -88,6 +93,8 @@ $('#arrow-right-cream').click(function () {
     $('#arrow-right-cream').css('visibility', 'hidden');
     $('#arrow-left-cream').css('visibility', 'visible');
     $('#cream-price').css('visibility', 'visible');
+    $('#cake-faded-right').css('visibility', 'hidden');
+    $('#cake-faded-left').css('visibility', 'visible');
 
     $('#cake-cream').animate({
         opacity: '1'
@@ -108,6 +115,7 @@ $('#add-cream-next').click(function () {
 
 let isAddCream = true;
 $('#arrow-right-cream').css('visibility', 'hidden');
+$('#cake-faded-right').css('visibility', 'hidden');
 
 
 // ADD MESSAGE
