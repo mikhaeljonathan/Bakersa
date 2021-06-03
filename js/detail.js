@@ -19,9 +19,10 @@ document.getElementById('main').insertAdjacentHTML('afterbegin',
 </div>`
 );
 
-for (let i = 0; i < Number(breadRating[id]); i++){
+let rating = Number(breadRating[id]);
+for (let i = 0; i < 5; i++){
     document.getElementsByClassName('rating')[0].insertAdjacentHTML('beforeend', 
-    `<img src="../src/icons/star.jpg" alt="Star">`);
+    `<img src="../src/icons/star${i < rating ? '' : '-kopong'}.jpg" alt="Star">`);
 }
 
 let stock = 0;
