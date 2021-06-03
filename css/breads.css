@@ -6,20 +6,15 @@
 
 .bread {
   cursor: pointer;
-  display: flex;
-  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 1rem;
   border-radius: 1rem;
   margin: .5rem;
 }
 
 .bread:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.bread:hover .seemore-arrow {
-  left: 0.5rem;
 }
 
 .bread:hover .seemore-text {
@@ -30,10 +25,10 @@
   width: 5rem;
   height: 5rem;
   border-radius: 0.75rem;
+  margin: 1rem;
 }
 
 .bread-info {
-  margin-left: 1rem;
   align-self: center;
 }
 
@@ -42,20 +37,31 @@
 }
 
 .bread-seemore {
-  display: flex;
-  position: absolute;
-  right: 1.5rem;
-  bottom: 1rem;
+  background-color: rgba(69, 54, 35, .8);
+  height: 100%;
+  width: 5rem;
+  justify-self: right;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity .5s;
 }
 
-.seemore-arrow {
-  position: relative;
-  margin-left: 0.5rem;
+.seemore-text {
+  color: white;
+  text-align: center;
 }
 
-.bread-more {
+.bread:hover .bread-seemore {
+  opacity: 1;
+}
+
+#bread-more {
   display: block;
   text-align: center;
+  padding: 1rem;
 }
 
 .bread-more .dots {
