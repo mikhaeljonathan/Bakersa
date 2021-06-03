@@ -47,6 +47,10 @@ for (let i = 0; i < newBreadTitles.length; i++){
     </div>`);
 }
 
+$('#bread-more').click(function(){
+    window.location.href = `classic.html`;
+});
+
 function goDetail(idx){
     window.location.href = `detail.html?id=${idx}`;
 }
