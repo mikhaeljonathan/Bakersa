@@ -35,7 +35,7 @@ let displayCakeFlavor = function (n) {
 $('#choose-flavor-next').click(function () {
     $('#choose-flavor').removeClass('section-active');
     $('#add-cream').addClass('section-active');
-    addCream();
+    displayCakeCream();
 });
 
 
@@ -46,13 +46,19 @@ displayCakeFlavor(currentFlavor);
 
 
 // ADD CREAM
-let isAddCream = true;
-function addCream() {
+function displayCakeCream() {
+    isAddCream = true;
     let curFLavorName = flavors[currentFlavor];
+
+    let cakeCream = document.getElementsByClassName('cake-cream');
+    for (let i = 0; i < cakeCream.length; i++){
+        cakeCream[i].classList.remove('cake-active');
+    }
+
     $(`#${curFLavorName}-cake-cream`).addClass('cake-active');
 }
 
-$('#arrow-left-cream').click(function(){
+$('#arrow-left-cream').click(function () {
     isAddCream = false;
 
     $('#add-cream-title').html('No... :(');
@@ -66,7 +72,7 @@ $('#arrow-left-cream').click(function(){
 
 });
 
-$('#arrow-right-cream').click(function(){
+$('#arrow-right-cream').click(function () {
     isAddCream = true;
 
     $('#add-cream-title').html('Yes!');
@@ -79,13 +85,70 @@ $('#arrow-right-cream').click(function(){
     }, 'slow');
 });
 
-$('#add-cream-next').click(function(){
+$('#add-cream-before').click(function(){
+    $('#add-cream').removeClass('section-active');
+    $('#choose-flavor').addClass('section-active');
+    displayCakeFlavor(currentFlavor);
+})
+
+$('#add-cream-next').click(function () {
     $('#add-cream').removeClass('section-active');
     $('#add-message').addClass('section-active');
+    displayCakeMessage();
 });
 
+let isAddCream = true;
 $('#arrow-right-cream').css('visibility', 'hidden');
 
 
-
 // ADD MESSAGE
+function displayCakeMessage() {
+    let curFLavorName = flavors[currentFlavor];
+
+    let cakeMessage = document.getElementsByClassName('cake-message');
+    for (let i = 0; i < cakeMessage.length; i++){
+        cakeMessage[i].classList.remove('cake-active');
+    }
+
+    $(`#${curFLavorName}-cake-message`).addClass('cake-active');
+
+    $('#cake-cream-message').css('opacity', `${isAddCream ? '1' : '0'}`);
+
+}
+
+$('#add-message-previous').click(function(){
+    $('#add-message').removeClass('section-active');
+    $('#add-cream').addClass('section-active');
+    displayCakeCream();
+})
+
+$('#add-message-finish').click(function () {
+    message = document.getElementById('cake-input-message').value;
+    colorMessage = document.getElementById('cake-input-message-color').value;
+
+    $('#add-message').removeClass('section-active');
+    $('#cake-finish').addClass('section-active');
+    displayCakeFinish();
+});
+
+let message = '';
+let colorMessage = '';
+
+
+// FINISH
+
+function displayCakeFinish() {
+    let curFLavorName = flavors[currentFlavor];
+
+    let cakeFinish = document.getElementsByClassName('cake-finish');
+    for (let i = 0; i < cakeFinish.length; i++){
+        cakeFinish[i].classList.remove('cake-active');
+    }
+
+    $(`#${curFLavorName}-cake-finish`).addClass('cake-active');
+    $('#cake-cream-finish').css('opacity', `${isAddCream ? '1' : '0'}`);
+
+    $('#cake-message').html(message).css('color', colorMessage);
+
+    $('#cake-price').html(`Rp ${isAddCream ? '110' : '100'}.000,00`);
+}

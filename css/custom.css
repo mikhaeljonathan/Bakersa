@@ -57,11 +57,11 @@ main h2 {
   cursor: pointer;
 }
 
-#arrow-left:hover {
+.arrow-left:hover {
   content: url('../src/arrow-left-fill.png');
 }
 
-#arrow-right:hover {
+.arrow-right:hover {
   content: url('../src/arrow-right-fill.png');
 }
 
@@ -121,8 +121,60 @@ main section {
 }
 
 /* CREAM */
-.cake-cream {
+.cream {
   position: absolute;
   z-index: 100;
   left: 0;
+  top: 0;
+}
+
+#add-cream-before {
+  left: 0;
+}
+
+/* INPUT MESSAGE */
+#cake-input-message {
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  width: 70%;
+  margin: 0 1rem;
+}
+
+#cake-input-message::placeholder {
+  color: var(--dark-choco);
+}
+
+#cake-input-message:focus {
+  outline: none;
+}
+
+#cake-input-message:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.wide-button {
+  position: static;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+
+/* FINISH */
+.cake-message-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+}
+
+.cake-message-container p {
+  width: 40%;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px #000000;
 }
