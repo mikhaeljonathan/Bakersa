@@ -36,17 +36,21 @@ for (let i = 0; i < 5; i++) {
 
 function decrement() {
     if (stock > 0) stock--;
+    $('#add-to-cart').css('background-color', `var(--${stock > 0 ? 'teal' : 'light-grey'})`).css('cursor', `${stock > 0 ? 'pointer' : 'not-allowed'}`);
     $('#stock').html(stock);
     $('#subtotal').html(`Rp ${breadPrices[id] * stock},00`);
 }
 
 function increment() {
     stock++;
+    $('#add-to-cart').css('background-color', `var(--${stock > 0 ? 'teal' : 'light-grey'})`).css('cursor', `${stock > 0 ? 'pointer' : 'not-allowed'}`);
     $('#stock').html(stock);
     $('#subtotal').html(`Rp ${breadPrices[id] * stock},00`);
 }
 
 $('#add-to-cart').click(function(){
+    if (stock === 0) return;
+
     let curBread = {
         type: 'bread',
         id: breadId[id],
@@ -75,4 +79,15 @@ $('#add-to-cart').click(function(){
     }
 
     localStorage.setItem('CART', JSON.stringify(curLocalStorage));
+
+    $('.overlay-dialog').css('visibility', 'visible');
+    $('#dialog-message').html(`✔️ Your item${stock > 1 ? 's' : ''}: <strong>${breadNames[id]} x${stock}</strong> ${stock > 1 ? 'are' : 'is'} added to the cart successfully<br><br>Subtotal: <strong>Rp ${breadPrices[id] * stock},00</strong>.`);
+});
+
+$('#buy-another-bread').click(function(){
+    window.location.href = 'classic.html';
+});
+
+$('#go-to-checkout-page').click(function(){
+    window.location.href = 'checkout.html';
 });

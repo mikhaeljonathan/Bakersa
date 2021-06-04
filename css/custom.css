@@ -1,3 +1,13 @@
+#go-to-checkout-page {
+  background-color: var(--teal);
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#go-to-checkout-page:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 header {
   background-image: url("../src/banners/custom-cake-banner.jpg");
   background-position: center;

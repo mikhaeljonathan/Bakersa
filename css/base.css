@@ -33,6 +33,7 @@ a {
   z-index: 1000;
   display: grid;
   place-items: center;
+  visibility: hidden;
 }
 
 .dialog {

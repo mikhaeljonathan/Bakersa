@@ -182,9 +182,10 @@ function capitalize(string){
 
 $('#cake-finish-cart').click(function(){
     let price = isAddCream ? 110000 : 100000;
+    let name = `${capitalize(flavors[currentFlavor])} ${isAddCream ? 'Cream' : ''} Cake`;
     let curCake = {
         type: 'cake',
-        name: `${capitalize(flavors[currentFlavor])} ${isAddCream ? 'Cream' : ''} Cake`,
+        name: name,
         message: `${message.length === 0 ? 'No message attached' : `message: ${message} (color: ${colorMessage})`}`,
         price: price,
         stock: 1
@@ -196,4 +197,15 @@ $('#cake-finish-cart').click(function(){
     curLocalStorage.push(JSON.stringify(curCake));
 
     localStorage.setItem('CART', JSON.stringify(curLocalStorage));
+
+    $('.overlay-dialog').css('visibility', 'visible');
+    $('#dialog-message').html(`✔️ Your item: <strong>${name} x1</strong> is added to the cart successfully<br><br>Price: <strong>Rp ${isAddCream ? 110000 : 100000},00</strong>.`);
+});
+
+$('#make-another-cake').click(function(){
+    window.location.reload();
+});
+
+$('#go-to-checkout-page').click(function(){
+    window.location.href = 'checkout.html';
 });

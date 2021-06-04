@@ -41,7 +41,6 @@ main h3 {
 
 .stocks {
     display: flex;
-    margin-bottom: 2rem;
 }
 
 #stock {
@@ -67,6 +66,8 @@ main h3 {
     position: absolute;
     right: 2rem;
     bottom: 2rem;
+    background-color: var(--light-grey);
+    cursor: not-allowed;
 }
 
 .stocks button {
@@ -120,6 +121,10 @@ main h3 {
     .order h3 {
         display: block;
         font-weight: bold;
+    }
+
+    .stocks {
+        margin-bottom: 2rem;
     }
 
     #subtotal, .order br {
