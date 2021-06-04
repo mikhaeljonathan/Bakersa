@@ -82,6 +82,9 @@ $('#add-to-cart').click(function(){
 
     $('.overlay-dialog').css('visibility', 'visible');
     $('#dialog-message').html(`✔️ Your item${stock > 1 ? 's' : ''}: <strong>${breadNames[id]} x${stock}</strong> ${stock > 1 ? 'are' : 'is'} added to the cart successfully<br><br>Subtotal: <strong>Rp ${breadPrices[id] * stock},00</strong>.`);
+
+    stock = 1;
+    decrement();
 });
 
 $('#buy-another-bread').click(function(){

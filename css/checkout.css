@@ -43,14 +43,15 @@ main {
   position: absolute;
   top: 0;
   right: 0;
-  left: 0;
   bottom: 0;
-  border-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   color: white;
   display: grid;
   place-items: center;
   opacity: 0;
   transition: opacity .5s;
+  padding: 0 1rem;
 }
 
 .cart-overlay > p {
