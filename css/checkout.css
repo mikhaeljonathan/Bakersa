@@ -38,16 +38,80 @@ main {
   background-color: var(--light-grey);
 }
 
+.cart-overlay {
+  background-color: var(--dark-choco);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 1rem;
+  color: white;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.cart-overlay > p {
+  align-self: end;
+}
+
+.edit-amount {
+  display: flex;
+}
+
+.amount {
+  margin: 0 1rem;
+  align-self: center;
+}
+
+.amount-button {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  color: var(--dark-choco);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+}
+
+.amount-button:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.amount-button {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
+
 .cart {
   display: grid;
   grid-template-columns: auto auto 1fr;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   margin: 0 0 2rem 0;
+  position: relative;
 }
 
 .cart:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cart:hover .cart-overlay {
+  opacity: 1;
+}
+
+.cart:hover .amount-button {
+  visibility: visible;
+}
+
+.opacity-zero {
+  opacity: 0;
+}
+
+.not-visible {
+  visibility: hidden;
 }
 
 .cart img {
