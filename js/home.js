@@ -36,7 +36,7 @@ let newBreadPrices = ['20.000', '20.000', '20.000'];
 for (let i = 0; i < newBreadTitles.length; i++){
     document.getElementsByClassName('breads')[0].insertAdjacentHTML('afterbegin', 
     `<div class="bread" onclick="goDetail(${newBreadId[i]})">
-        <img src="../src/breads/bread${i + 1}.jpg" alt="Bread ${i + 1}" />
+        <img src="../src/breads/bread${i}.jpg" alt="Bread ${i}" />
         <div class="bread-info">
             <h3>${newBreadTitles[i]}</h3>
             <p>Rp ${newBreadPrices[i]},00</p>
