@@ -12,6 +12,7 @@
 }
 
 body {
+  position: relative;
   font-family: 'Signika Negative', sans-serif;
   color: var(--dark-choco);
 }
@@ -20,6 +21,52 @@ a {
   text-decoration: none;
   color: var(--dark-choco);
   display: block;
+}
+
+.overlay-dialog {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+}
+
+.dialog {
+  position: relative;
+  background-color: white;
+  width: 50%;
+  padding: 3rem;
+  border-radius: 1rem;
+}
+
+.dialog p {
+  margin-bottom: 2rem;
+}
+
+.dialog-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dialog button {
+  padding: 1rem;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 1rem;
+  font-weight: bold;
+  color: var(--dark-choco);
+  margin: .5rem 0;
+}
+
+.dialog button:hover {
+  background-color: var(--light-grey);
 }
 
 /* NAVBAR */
@@ -195,4 +242,11 @@ footer p {
     color: white;
   }
   
+}
+
+
+@media screen and (min-width: 1000px) {
+  .dialog-buttons {
+    justify-content: space-between;
+  }
 }
