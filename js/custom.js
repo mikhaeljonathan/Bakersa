@@ -185,7 +185,7 @@ $('#cake-finish-cart').click(function(){
     let curCake = {
         type: 'cake',
         name: `${capitalize(flavors[currentFlavor])} ${isAddCream ? 'Cream' : ''} Cake`,
-        message: `${message} (color: ${colorMessage})`,
+        message: `${message.length === 0 ? 'No message attached' : `message: ${message} (color: ${colorMessage})`}`,
         price: price,
         stock: 1
     };

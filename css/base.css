@@ -171,6 +171,7 @@ footer p {
     margin: 0;
     display: none;
     width: 10rem;
+    z-index: 100;
   }
 
   .products a {

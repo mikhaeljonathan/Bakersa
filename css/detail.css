@@ -31,6 +31,7 @@ main h3 {
 
 .stocks {
     display: flex;
+    margin-bottom: 2rem;
 }
 
 #stock {

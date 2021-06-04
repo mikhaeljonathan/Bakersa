@@ -1,0 +1,106 @@
+main {
+  padding: 2rem;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.cart {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  margin: 0 0 2rem 0;
+}
+
+.cart:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cart img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.75rem;
+  margin: 1rem;
+}
+
+.cart-info {
+  align-self: center;
+}
+
+.cart-info h3, .cart-info p {
+  margin-bottom: 0.5rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.quantity {
+  justify-self: right;
+  width: 3rem;
+  display: grid;
+  place-items: center;
+  padding-right: 0.5rem;
+}
+
+.quantity .circle {
+  background-color: var(--teal);
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.circle p {
+  color: white;
+}
+
+.empty-cart a {
+  color: white;
+}
+
+.empty-cart a:hover {
+  text-decoration: underline;
+  color: var(--teal);
+}
+
+.empty-cart {
+  background-image: url('../src/banners/classic-bread-banner2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  height: 70vh;
+  font-size: 4rem;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 5rem;
+}
+
+#total {
+  font-size: 1.25rem;
+}
+
+#total span {
+  font-weight: bold;
+}
+
+main hr {
+  margin: 2rem 0;
+}
