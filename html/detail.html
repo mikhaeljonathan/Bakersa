@@ -75,13 +75,20 @@
 
     <!-- MAIN -->
     <main id="main">
-        <div class="order">
+        <div id="content">
+          <div class="order">
+            <h3>Buy how many breads?</h3>
             <div class="stocks">
-                <img src="../src/icons/star.jpg" alt="Star" onclick="decrement()">
+                <button onclick="decrement()">-</button>
                 <p id="stock">0</p>
-                <img src="../src/icons/star.jpg" alt="Star" onclick="increment()">
+                <button onclick="increment()">+</button>
             </div>
-            <button>Add to Cart</button>
+            <br>
+            <br>
+            <h3>Subtotal</h3>
+            <p id="subtotal">Rp 0,00</p>
+            <button id="add-to-cart">Add to Cart</button>
+          </div>
         </div>
     </main> 
 

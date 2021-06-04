@@ -9,7 +9,13 @@ let id = Number(url.searchParams.get('id'));
 
 document.getElementById('main').insertAdjacentHTML('afterbegin',
 `
-<img src="../src/breads/bread${id + 1}.jpg" alt="Bread ${id + 1}" width="100%">
+<div class="banner">
+    <img src="../src/breads/bread${id + 1}.jpg" alt="Bread ${id + 1}" width="100%">
+</div>`
+);
+
+document.getElementById('content').insertAdjacentHTML('afterbegin',
+`
 <div class="information">
     <h2>${breadTitles[id]}</h2>
     <h3>Rp ${breadPrices[id]},00</h3>
