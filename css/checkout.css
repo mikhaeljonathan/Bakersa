@@ -75,9 +75,7 @@ main {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: white;
-  height: 70vh;
-  font-size: 4rem;
+  height: 30rem;
   position: relative;
 }
 
@@ -91,6 +89,8 @@ main {
   right: 0;
   bottom: 0;
   padding: 5rem;
+  font-size: 250%;
+  color: white;
 }
 
 #total {
