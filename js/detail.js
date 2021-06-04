@@ -48,6 +48,7 @@ function increment() {
 
 $('#add-to-cart').click(function(){
     let curBread = {
+        type: 'bread',
         id: breadId[id],
         name: breadNames[id],
         price: breadPrices[id],

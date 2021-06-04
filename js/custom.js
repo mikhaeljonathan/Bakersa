@@ -175,3 +175,25 @@ $('#cake-finish-previous').click(function(){
     $('#add-message').addClass('section-active');
     displayCakeFinish();
 });
+
+function capitalize(string){
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+$('#cake-finish-cart').click(function(){
+    let price = isAddCream ? 110000 : 100000;
+    let curCake = {
+        type: 'cake',
+        name: `${capitalize(flavors[currentFlavor])} ${isAddCream ? 'Cream' : ''} Cake`,
+        message: `${message} (color: ${colorMessage})`,
+        price: price,
+        stock: 1
+    };
+
+    let curLocalStorage = localStorage.getItem('CART') == undefined ? '[]' : localStorage.getItem('CART');
+    curLocalStorage = JSON.parse(curLocalStorage);
+
+    curLocalStorage.push(JSON.stringify(curCake));
+
+    localStorage.setItem('CART', JSON.stringify(curLocalStorage));
+});
