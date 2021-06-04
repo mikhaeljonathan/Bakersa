@@ -2,10 +2,40 @@ main {
   padding: 2rem;
 }
 
+#yes-clear-cart {
+  background-color: var(--teal);
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#yes-clear-cart {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 .title {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
+}
+
+.title h2 {
+  align-self: center;
+}
+
+.title button {
+  text-transform: uppercase;
+  padding: 1rem;
+  background-color: white;
+  border: none;
+  color: var(--dark-choco);
+  font-weight: bold;
+  letter-spacing: .125rem;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.title button:hover {
+  background-color: var(--light-grey);
 }
 
 .cart {

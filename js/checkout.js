@@ -45,3 +45,17 @@ if (curLocalStorage == undefined) {
 
     $('#total').html(`<span>Total:</span> Rp ${totalPrice},00`);
 }
+
+$('#clear-cart').click(function(){
+    $('.overlay-dialog').css('visibility', 'visible');
+    $('#dialog-message').html(`⚠️ Are you sure want to clear this cart?`);
+})
+
+$('#cancel-clear-cart').click(function(){
+    $('.overlay-dialog').css('visibility', 'hidden');
+});
+
+$('#yes-clear-cart').click(function(){
+    localStorage.clear();
+    window.location.reload();
+});
