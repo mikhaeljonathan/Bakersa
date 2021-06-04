@@ -1,5 +1,5 @@
 let breadTitles = ['Roti 1', 'Roti 2', 'Roti 3', 'Roti 4', 'Roti 5', 'Roti 6', 'Roti 7', 'Roti 8', 'Roti 9', 'Roti 10'];
-let breadPrices = ['20.000', '20.000', '20.000', '20.000', '20.000', '20.000', '20.000', '20.000', '20.000', '20.000'];
+let breadPrices = [20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000];
 let breadRating = ['3', '3', '3', '3', '3', '3', '3', '3', '3', '3'];
 let breadDesc = ['Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.'];
 
@@ -36,9 +36,11 @@ let stock = 0;
 function decrement(){
     if (stock > 0) stock--;
     $('#stock').html(stock);
+    $('#subtotal').html(`Rp ${breadPrices[id] * stock},00`);
 }
 
 function increment(){
     stock++;
     $('#stock').html(stock);
+    $('#subtotal').html(`Rp ${breadPrices[id] * stock},00`);
 }
