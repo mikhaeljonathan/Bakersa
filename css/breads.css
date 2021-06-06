@@ -11,6 +11,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   margin: .5rem;
+  position: relative;
 }
 
 .bread:hover {
@@ -21,7 +22,14 @@
   text-decoration: underline;
 }
 
-.bread img {
+.new-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3rem;
+}
+
+.bread-image {
   width: 5rem;
   height: 5rem;
   border-radius: 0.75rem;

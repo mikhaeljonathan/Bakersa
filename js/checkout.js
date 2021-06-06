@@ -85,7 +85,7 @@ function decrementAmount(idx) {
     amount--;
 
     if (amount === 0) {
-        handleZeroAmount(idx);
+        showDeleteItemDialog(idx);
         return;
     }
 
@@ -126,7 +126,7 @@ function updateAmount(amount, idx) {
 }
 
 let soonToBeDeletedItemIdx = -1;
-function handleZeroAmount(idx) {
+function showDeleteItemDialog(idx) {
     $('.overlay-dialog').css('visibility', 'visible');
     $('#yes-delete-item').css('display', 'inline-block');
     $('#dialog-message').html(`⚠️ Are you sure want to delete item: <strong>${JSON.parse(curLocalStorage[idx]).name}</strong> from your cart?`);

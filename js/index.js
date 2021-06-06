@@ -29,18 +29,19 @@ let displayNews = function (n) {
 
 displayNews(currentNews);
 
-let newBreadId = [0, 1, 2];
-let breadNames = ['Roti 1', 'Roti 2', 'Roti 3', 'Roti 4', 'Roti 5', 'Roti 6', 'Roti 7', 'Roti 8', 'Roti 9', 'Roti 10'];
-let breadPrices = [20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000];
 
-for (let i = 0; i < newBreadId.length; i++){
-    let id = newBreadId[i];
+for (let i = 0; i < breads.length; i++){
+    if (!breads[i].isNew) continue;
+    
+    let curBread = breads[i];
+    let id = curBread.id;
     document.getElementsByClassName('breads')[0].insertAdjacentHTML('afterbegin', 
     `<div class="bread" onclick="goDetail(${id})">
-        <img src="src/breads/bread${id}/1.jpg" alt="${breadNames[id]}" />
+        <img src="src/icons/new-icon_rect.png" alt="New Icon" class="new-icon" />
+        <img src="src/breads/bread${id}/1.jpg" alt="${curBread.name}" class="bread-image"/>
         <div class="bread-info">
-            <h3>${breadNames[id]}</h3>
-            <p>Rp ${breadPrices[id]},00</p>
+            <h3>${curBread.name}</h3>
+            <p>Rp ${curBread.price},00</p>
         </div>
         <div class="bread-seemore">
             <p class="seemore-text">See<br>more</p>
