@@ -30,16 +30,17 @@ let displayNews = function (n) {
 displayNews(currentNews);
 
 let newBreadId = [0, 1, 2];
-let newBreadTitles = ['Roti 1', 'Roti 2', 'Roti 3'];
-let newBreadPrices = ['20.000', '20.000', '20.000'];
+let breadNames = ['Roti 1', 'Roti 2', 'Roti 3', 'Roti 4', 'Roti 5', 'Roti 6', 'Roti 7', 'Roti 8', 'Roti 9', 'Roti 10'];
+let breadPrices = [20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000];
 
-for (let i = 0; i < newBreadTitles.length; i++){
+for (let i = 0; i < newBreadId.length; i++){
+    let id = newBreadId[i];
     document.getElementsByClassName('breads')[0].insertAdjacentHTML('afterbegin', 
-    `<div class="bread" onclick="goDetail(${newBreadId[i]})">
-        <img src="../src/breads/bread${i}.jpg" alt="Bread ${i}" />
+    `<div class="bread" onclick="goDetail(${id})">
+        <img src="../src/breads/bread${id}/1.jpg" alt="${breadNames[id]}" />
         <div class="bread-info">
-            <h3>${newBreadTitles[i]}</h3>
-            <p>Rp ${newBreadPrices[i]},00</p>
+            <h3>${breadNames[id]}</h3>
+            <p>Rp ${breadPrices[id]},00</p>
         </div>
         <div class="bread-seemore">
             <p class="seemore-text">See<br>more</p>
@@ -48,9 +49,9 @@ for (let i = 0; i < newBreadTitles.length; i++){
 }
 
 $('#bread-more').click(function(){
-    window.location.href = `classic.html`;
+    window.location.href = `html/classic.html`;
 });
 
 function goDetail(idx){
-    window.location.href = `detail.html?id=${idx}`;
+    window.location.href = `html/detail.html?id=${idx}`;
 }
