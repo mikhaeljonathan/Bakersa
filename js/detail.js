@@ -85,11 +85,11 @@ $('#add-to-cart').click(function(){
     for (let i = 0; i < curLocalStorage.length; i++){
 
         let bread = JSON.parse(curLocalStorage[i]);
-        if (bread.id != undefined && bread.id === id) {
+        if (bread.id === id) {
             alreadyExist = true;
             bread.stock += stock;
+            curLocalStorage[i] = JSON.stringify(bread);
         }
-        curLocalStorage[i] = JSON.stringify(bread);
 
     }
 

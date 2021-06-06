@@ -1,4 +1,5 @@
 let curLocalStorage = localStorage.getItem('CART');
+curLocalStorage = JSON.parse(curLocalStorage);
 let totalPrice = 0;
 
 if (curLocalStorage == undefined) {
@@ -17,8 +18,7 @@ if (curLocalStorage == undefined) {
     $('#total').css('display', 'none');
 
 } else {
-    curLocalStorage = JSON.parse(curLocalStorage);
-
+    
     for (let i = 0; i < curLocalStorage.length; i++){
         let cart = JSON.parse(curLocalStorage[i]);
         let subTotal = cart.stock * cart.price;
@@ -79,6 +79,8 @@ function decrementAmount(idx){
     $(`#cart-stock-${idx}`).html(amount);
     $(`#subtotal-${idx}`).html(`<span class="bold">Subtotal:</span> Rp ${curPrice * amount},00`)
     $('#total').html(`<span>Total:</span> Rp ${totalPrice},00`);
+
+    updateAmount(amount, idx);
 }
 
 function incrementAmount(idx){
@@ -92,4 +94,16 @@ function incrementAmount(idx){
     $(`#cart-stock-${idx}`).html(amount);
     $(`#subtotal-${idx}`).html(`<span class="bold">Subtotal:</span> Rp ${curPrice * amount},00`)
     $('#total').html(`<span>Total:</span> Rp ${totalPrice},00`);
+
+    updateAmount(amount, idx);
+}
+
+function updateAmount(amount, idx) {
+
+    let bread = JSON.parse(curLocalStorage[idx]);
+    bread.stock = amount;
+    console.log(amount);
+    curLocalStorage[idx] = JSON.stringify(bread);
+
+    localStorage.setItem('CART', JSON.stringify(curLocalStorage));
 }
