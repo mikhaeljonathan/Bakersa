@@ -2,13 +2,14 @@ main {
   padding: 2rem;
 }
 
-#yes-clear-cart {
+#yes-clear-cart, #yes-delete-item {
   background-color: var(--teal);
   color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: none;
 }
 
-#yes-clear-cart {
+#yes-clear-cart:hover, #yes-delete-item:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
