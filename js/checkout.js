@@ -35,7 +35,7 @@ if (curLocalStorage == undefined) {
                     <button class="amount-button" onclick="incrementAmount(${i})">+</button>
                 </div>
             </div>
-            <img src="../src/${cart.type === 'bread' ? `breads/bread${cart.id}.jpg` : 'banners/custom-cake-banner.jpg'}" alt="Cart ${i}" />
+            <img src="../src/${cart.type === 'bread' ? `breads/bread${cart.id}/1.jpg` : 'banners/custom-cake-banner.jpg'}" alt="Cart ${i}" />
             <div class="cart-info">
                 <h3>${cart.name}</h3>
                 ${cart.type === 'bread' ? '' : `<p>${cart.message}</p>`}

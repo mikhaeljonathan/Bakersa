@@ -13,7 +13,7 @@ document.title = `Bakersa | ${breadNames[id]}`;
 document.getElementById('main').insertAdjacentHTML('afterbegin',
     `
 <div class="banner">
-    <img src="../src/breads/bread${id}.jpg" alt="Bread ${id}" width="100%">
+    <img src="../src/breads/bread${id}/1.jpg" alt="Bread ${id}" width="100%">
 </div>`
 );
 
@@ -31,7 +31,7 @@ document.getElementById('content').insertAdjacentHTML('afterbegin',
 let rating = breadRating[id];
 for (let i = 0; i < 5; i++) {
     document.getElementsByClassName('rating')[0].insertAdjacentHTML('beforeend',
-        `<img src="../src/icons/star${i < rating ? '' : '-kopong'}.jpg" alt="Star">`);
+        `<img src="../src/icons/star${i < rating ? '-fill' : '-outline'}.png" alt="Star">`);
 }
 
 function decrement() {
