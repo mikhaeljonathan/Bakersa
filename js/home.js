@@ -48,9 +48,9 @@ for (let i = 0; i < newBreadTitles.length; i++){
 }
 
 $('#bread-more').click(function(){
-    window.location.href = `classic.html`;
+    window.location.href = `html/classic.html`;
 });
 
 function goDetail(idx){
-    window.location.href = `detail.html?id=${idx}`;
+    window.location.href = `html/detail.html?id=${idx}`;
 }
