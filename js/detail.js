@@ -1,14 +1,33 @@
-let breadId = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-let breadNames = ['Roti 1', 'Roti 2', 'Roti 3', 'Roti 4', 'Roti 5', 'Roti 6', 'Roti 7', 'Roti 8', 'Roti 9', 'Roti 10'];
-let breadPrices = [20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000];
-let breadRating = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3];
-let breadDesc = ['Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quam eius enim, fuga debitis quisquam exercitationem deleniti ipsum odit quas eos! At ipsam similique voluptas sed id quae nemo consectetur.'];
+class Bread {
+    constructor(id, name, price, rating, desc, isNew = false) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.rating = rating;
+        this.desc = desc;
+        this.isNew = isNew;
+    }
+}
+let breads = [];
+breads.push(new Bread(0, 'Baguette Bread', 18000, 3, 'This is a yeast bread that originated in France and has a long, oblong shape with slits in it to allow for the expansion of gas. Also called French bread or French sticks, Baguettes are usually made from flour, water, yeast, and salt, and its look is very recognizable to bread lovers of all kinds.'));
+breads.push(new Bread(1, 'Brioche Bread', 27000, 3, 'A French bread made with butter and eggs, Brioche is extremely light and has a subtle sweetness to it. Its crust is soft and it has a golden-yellow shade due to the egg that you brush on it right before you bake it. Even with French toast, Brioche bread is a perfect choice, and if you’ve never tasted this type of bread before, there is no better time than right now to get started.'));
+breads.push(new Bread(2, 'Ciabatta Bread', 16000, 3, 'Ciabatta is the Italian word for “slipper,” and this Italian-made bread consists of just a few basic ingredients, including water, salt, yeast, and wheat flour. Depending on where in Italy you find this type of bread, its crust and even its texture can vary, but the main ingredients are the exact same in every loaf you find. Ciabatta bread is perfect for paninis and sandwiches, as well as many other dishes.', true));
+breads.push(new Bread(3, 'Multigrain Bread', 21000, 3, 'With a rich hearty flavor, multigrain bread usually uses grains such as oats, barley, flax, and millet, as well as others, so it is extremely healthy and delicious. It is perfect for your morning toast, sandwiches, or to dip in dressings or vegetable oil that has been sprinkled with herbs.'));
+breads.push(new Bread(4, 'Rye Bread', 21000, 3, 'Made with both rye flour and bread flour, rye bread consists of a tight crumb and a very strong flavor. Some bakers even add caraway seeds or dill seeds so that their flavor is a little earthy. In certain sandwiches – most notably, corned-beef and pastrami sandwiches – the rye bread is what gives it the signature taste that most people love, and they become even more appreciated when you add a little mustard.', true));
+breads.push(new Bread(5, 'Sourdough Bread', 31000, 3, 'Sourdough bread has a nice thick crust and a soft chewy center, along with very large air bubbles. It also has a very distinct taste that you’ll want more of once you try it, and it can accompany any type of sandwich you wish to make.', true));
+breads.push(new Bread(6, 'Whole Wheat Bread', 19500, 3, 'With white bread, only parts of the wheat grain are used, but in whole-wheat bread the germ and the bran are intact. What does this mean for those eating this bread? It means the bread is more nutritious and has much more fiber than regular bread. You can use whole-wheat bread for any type of sandwich you would normally use white bread for, and you can make up your own recipes if you are creative enough.'));
+breads.push(new Bread(7, 'Bagels', 22500, 3, 'Bagels are usually boiled in water for a short time then baked afterward. They are round, come in two parts, and have a hole in the center. The best part about buying bagels is their numerous types, such as egg, cinnamon, and blueberry. Try them in a traditional way by eating them with salmon or cream cheese.'));
+breads.push(new Bread(8, 'Grissini Bread', 24000, 3, 'Somewhat similar to breadsticks, Grissini is made of crisp, dry bread and are thin sticks that resemble a pencil. Native to Italy, these bread can be flavored any way you want them to be, so feel free to add herbs and spices of any type to liven up the flavor. They are mostly used as a before-dinner alternative to regular or garlic bread, but they can be eaten any way you wish.'));
+breads.push(new Bread(9, 'Soda Bread', 12000, 3, 'With ingredients that include buttermilk, salt, baking soda, and flour, this is a traditional type of bread in Ireland. It is also a bread that doesn’t need to be left alone for a while to rise, which means it can be made quickly and easily at any time.', true));
+
 
 let urlStr = window.location.href;
 let url = new URL(urlStr);
 let id = Number(url.searchParams.get('id'));
 let stock = 0;
-document.title = `Bakersa | ${breadNames[id]}`;
+let curBread = breads[id];
+
+document.title = `Bakersa | ${curBread.name}`;
 
 document.getElementById('main').insertAdjacentHTML('afterbegin',
     `
@@ -20,15 +39,15 @@ document.getElementById('main').insertAdjacentHTML('afterbegin',
 document.getElementById('content').insertAdjacentHTML('afterbegin',
     `
 <div class="information">
-    <h2>${breadNames[id]}</h2>
-    <h3>Rp ${breadPrices[id]},00</h3>
+    <h2>${curBread.name}</h2>
+    <h3>Rp ${curBread.price},00</h3>
     <div class="rating">
     </div>
-    <p>${breadDesc[id]}</p>
+    <p>${curBread.desc}</p>
 </div>`
 );
 
-let rating = breadRating[id];
+let rating = curBread.rating;
 for (let i = 0; i < 5; i++) {
     document.getElementsByClassName('rating')[0].insertAdjacentHTML('beforeend',
         `<img src="../src/icons/star${i < rating ? '-fill' : '-outline'}.png" alt="Star">`);
@@ -38,24 +57,24 @@ function decrement() {
     if (stock > 0) stock--;
     $('#add-to-cart').css('background-color', `var(--${stock > 0 ? 'teal' : 'light-grey'})`).css('cursor', `${stock > 0 ? 'pointer' : 'not-allowed'}`);
     $('#stock').html(stock);
-    $('#subtotal').html(`Rp ${breadPrices[id] * stock},00`);
+    $('#subtotal').html(`Rp ${curBread.price * stock},00`);
 }
 
 function increment() {
     stock++;
     $('#add-to-cart').css('background-color', `var(--${stock > 0 ? 'teal' : 'light-grey'})`).css('cursor', `${stock > 0 ? 'pointer' : 'not-allowed'}`);
     $('#stock').html(stock);
-    $('#subtotal').html(`Rp ${breadPrices[id] * stock},00`);
+    $('#subtotal').html(`Rp ${curBread.price * stock},00`);
 }
 
 $('#add-to-cart').click(function(){
     if (stock === 0) return;
 
-    let curBread = {
+    let insertedBread = {
         type: 'bread',
-        id: breadId[id],
-        name: breadNames[id],
-        price: breadPrices[id],
+        id: curBread.id,
+        name: curBread.name,
+        price: curBread.price,
         stock: stock
     };
 
@@ -75,13 +94,13 @@ $('#add-to-cart').click(function(){
     }
 
     if (!alreadyExist){
-        curLocalStorage.push(JSON.stringify(curBread));
+        curLocalStorage.push(JSON.stringify(insertedBread));
     }
 
     localStorage.setItem('CART', JSON.stringify(curLocalStorage));
 
     $('.overlay-dialog').css('visibility', 'visible');
-    $('#dialog-message').html(`✔️ Your item${stock > 1 ? 's' : ''}: <strong>${breadNames[id]} x${stock}</strong> ${stock > 1 ? 'are' : 'is'} added to the cart successfully<br><br>Subtotal: <strong>Rp ${breadPrices[id] * stock},00</strong>.`);
+    $('#dialog-message').html(`✔️ Your item${stock > 1 ? 's' : ''}: <strong>${curBread.name} x${stock}</strong> ${stock > 1 ? 'are' : 'is'} added to the cart successfully<br><br>Subtotal: <strong>Rp ${curBread.price * stock},00</strong>.`);
 
     stock = 1;
     decrement();

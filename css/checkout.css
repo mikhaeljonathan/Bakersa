@@ -166,7 +166,7 @@ main {
 }
 
 .empty-cart {
-  background-image: url('../src/banners/classic-bread-banner2.jpg');
+  background-image: url('../src/banners/empty-cart-banner.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -177,7 +177,7 @@ main {
 
 .overlay {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   display: grid;
   place-items: center;
   top: 0;
