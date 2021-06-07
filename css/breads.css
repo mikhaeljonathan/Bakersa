@@ -34,6 +34,7 @@
   height: 5rem;
   border-radius: 0.75rem;
   margin: 1rem;
+  object-fit: cover;
 }
 
 .bread-info {
