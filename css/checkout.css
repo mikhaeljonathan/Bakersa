@@ -202,3 +202,69 @@ main {
 main hr {
   margin: 2rem 0;
 }
+
+/* CUSTOMER FORM*/
+.customer-field {
+  margin-bottom: 3.5rem;
+}
+
+.customer-field form > input,textarea,select {
+  display: block;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  width: 100%;  
+  margin: 1rem 0;
+}
+
+.customer-field form > input,textarea,select::placeholder {
+  color: var(--dark-choco);
+}
+
+.customer-field form > input,textarea,select:focus {
+  outline: none;
+}
+
+.customer-field form > input:hover,textarea:hover,select:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.customer-field form > select {
+  width: 40%;
+}
+
+.customer-field form > select:required:invalid {
+  color: gray;
+}
+
+#address-input {
+  height: 22vh;
+}
+
+#subs {
+  display: inline;
+  width: auto;
+}
+
+.customer-field button {
+  position: absolute;
+  right: 2rem;
+}
+
+#submit-order {
+  background-color: var(--teal);
+  color: white;
+  text-transform: uppercase;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: .125rem;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 1rem 0 0;
+  width: 30%;
+  position: absolute;
+  right: 2rem;
+}

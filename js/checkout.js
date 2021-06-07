@@ -16,6 +16,7 @@ if (curLocalStorage == undefined || curLocalStorage.length === 0) {
 
     $('.title').css('display', 'none');
     $('#total').css('display', 'none');
+    $('.customer-field').css('display', 'none');
 
 } else {
 
@@ -139,3 +140,43 @@ $('#yes-delete-item').click(function () {
 
     window.location.reload();
 });
+
+// VALIDATION
+function validateForm() {
+    // NAME
+    if (document.forms["cust-form"]["name-input"].value == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+
+    // EMAIL
+    if (document.forms["cust-form"]["email-input"].value == "") {
+        alert("Email must be filled out");
+        return false;
+    }
+
+    // PHONE NUMBER
+    document.forms["cust-form"]["phone-input"].pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}";
+    if (document.forms["cust-form"]["phone-input"].value == "") {
+        alert("Phone must be filled out");
+        return false;
+    }
+
+    // ADDRESS
+    if (document.forms["cust-form"]["address-input"].value == "") {
+        alert("Address must be filled out");
+        return false;
+    }
+
+    // COURIER
+    if( document.forms["cust-form"]["courier-select"].value == "-1" ) {
+        alert( "Please choose courier!" );
+        return false;
+    }
+
+    // DELIVERY
+    if( document.forms["cust-form"]["delivery-select"].value == "-1" ) {
+        alert( "Please choose delivery time!" );
+        return false;
+    }
+}

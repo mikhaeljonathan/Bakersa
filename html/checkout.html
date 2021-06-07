@@ -96,6 +96,42 @@
             <p id="total"></p>
         </div>
         <hr>
+        <div class="customer-info">
+          <div class="title">
+            <h2>Customer Information</h2>
+          </div>
+          <div class="customer-field">
+            <form name="cust-form" action="#" onsubmit="return validateForm()">
+              <label for="name-input">Name</label>
+              <input type="text" placeholder="Enter your name..." id="name-input">
+              <label for="email-input">Email</label>
+              <input type="email" placeholder="someone@example.com..." id="email-input">
+              <label for="phone-input">Phone</label>
+              <input type="tel" placeholder="xxx-xxx-xxxx..." id="phone-input">
+              <label for="address-input">Address</label>
+              <textarea name="address-input" id="address-input" placeholder="Enter your address here..."></textarea>
+              
+              <label for="courier-select">Courier</label>
+              <select name="courier-select" required>
+                <option value="-1" disabled selected hidden>-</option>
+                <option>Gojek</option>
+                <option>Grab</option>
+                <option>JNE</option>
+                <option>J&T</option>
+              </select>
+              <label for="delivery-select">Delivery Time</label>
+              <select name="delivery-select" required>
+                <option value="-1" disabled selected hidden>-</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+              
+              <input type="checkbox" name="subs" id="subs">
+              <label for="subs">I want to subscribe to Bakersa's newsletter through email</label>
+              <input type="submit" id="submit-order" value="ORDER">
+            </form>
+          </div>
+        </div>
     </main>
 
     <!-- FOOTER -->
