@@ -142,41 +142,123 @@ $('#yes-delete-item').click(function () {
 });
 
 // VALIDATION
-function validateForm() {
-    // NAME
-    if (document.forms["cust-form"]["name-input"].value == "") {
-        alert("Name must be filled out");
-        return false;
+let nameElement = document.getElementById("name-input");
+let emailElement = document.getElementById("email-input");
+let phoneElement = document.getElementById("phone-input");
+let addressElement = document.getElementById("address-input");
+let courierElement = document.getElementById("courier-select");
+let deliveryElement = document.getElementById("delivery-select");
+
+let formElement = document.getElementById("form");
+let errorName = document.getElementById("errormsg-name");
+let errorEmail = document.getElementById("errormsg-email");
+let errorPhone = document.getElementById("errormsg-phone")
+let errorAddress = document.getElementById("errormsg-address")
+let errorCourier = document.getElementById("errormsg-courier")
+let errorDelivery = document.getElementById("errormsg-delivery");
+
+function checkName(name) {
+    if (name == null || name == "") {
+        return "⚠ Name must be filled out";
     }
 
-    // EMAIL
-    if (document.forms["cust-form"]["email-input"].value == "") {
-        alert("Email must be filled out");
-        return false;
-    }
-
-    // PHONE NUMBER
-    document.forms["cust-form"]["phone-input"].pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}";
-    if (document.forms["cust-form"]["phone-input"].value == "") {
-        alert("Phone must be filled out");
-        return false;
-    }
-
-    // ADDRESS
-    if (document.forms["cust-form"]["address-input"].value == "") {
-        alert("Address must be filled out");
-        return false;
-    }
-
-    // COURIER
-    if( document.forms["cust-form"]["courier-select"].value == "-1" ) {
-        alert( "Please choose courier!" );
-        return false;
-    }
-
-    // DELIVERY
-    if( document.forms["cust-form"]["delivery-select"].value == "-1" ) {
-        alert( "Please choose delivery time!" );
-        return false;
-    }
+    return "";
 }
+
+function checkEmail(email) {
+    if (email == null || email == "") {
+        return "⚠ Email must be filled out";
+    }
+    else if (!email.endsWith(".com") && !email.endsWith(".co.id")) {
+        return "⚠ Email must ends with .com or .co.id"
+    }
+
+    return "";
+}
+
+function isAllNumber(text) {
+    for (let i = 0; i < text.length; i++) {
+        let c = text[i];
+
+        if (isNaN(c) == true) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function checkPhone(phone) {
+    if (phone === null || phone === "") {
+        return "⚠ Phone must be filled out"
+    }
+    else if (!isAllNumber(phone)) {
+        return "⚠ Please input only numbers 0 - 9"
+    }
+    else if (phone.length < 11 || phone.length > 13 ) {
+        return "⚠ Phone length must beetwen 11 - 13"
+    }
+
+    return "";
+}
+
+function checkAddress(address) {
+    if (address === null || address === "") {
+        return "⚠ Address must be filled out"
+    }
+    else if (address.length > 10) {
+        return "⚠ The max length of 10 characters is reached"
+    }
+
+    return "";
+}
+
+function checkCourier(courier) {
+    if (courier === "-1") {
+        return "⚠ Please choose one"
+    }
+
+    return "";
+}
+
+function checkDelivery(delivery) {
+    if (delivery === "-1") {
+        return "⚠ Please choose one"
+    }
+
+    return "";
+}
+
+formElement.addEventListener("submit", (e)=> {
+    e.preventDefault();
+    let finalValidation = "";
+
+    let name = nameElement.value;
+    errorName.innerHTML = checkName(name);
+    finalValidation += checkName(name);
+
+    let email = emailElement.value;
+    errorEmail.innerHTML = checkEmail(email);
+    finalValidation += checkEmail(email);
+
+    let phone = phoneElement.value;
+    errorPhone.innerHTML = checkPhone(phone);
+    finalValidation += checkPhone(phone);
+
+    let address = addressElement.value;
+    errorAddress.innerHTML = checkAddress(address);
+    finalValidation += checkAddress(address);
+
+    let courier = courierElement.value;
+    errorCourier.innerHTML = checkCourier(courier);
+    finalValidation += checkCourier(courier);
+
+    let delivery = deliveryElement.value;
+    errorDelivery.innerHTML = checkDelivery(delivery);
+    finalValidation += checkDelivery(delivery);
+
+    if (finalValidation === "") {
+        localStorage.clear();
+        window.location.reload();
+    }
+});

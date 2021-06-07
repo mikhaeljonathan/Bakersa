@@ -102,33 +102,57 @@
             <h2>Customer Information</h2>
           </div>
           <div class="customer-field">
-            <form name="cust-form" action="#" onsubmit="return validateForm()">
+            <form name="cust-form" action="#" id="form">
               <label for="name-input">Name</label>
               <input type="text" placeholder="Enter your name..." id="name-input">
+              <div class="errormsg">
+                <p id="errormsg-name"></p>
+              </div>
+
               <label for="email-input">Email</label>
-              <input type="email" placeholder="someone@example.com..." id="email-input">
+              <input type="text" placeholder="someone@example.com..." id="email-input">
+              <div class="errormsg">
+                <p id="errormsg-email"></p>
+              </div>
+              
               <label for="phone-input">Phone</label>
-              <input type="tel" placeholder="xxx-xxx-xxxx..." id="phone-input">
+              <input type="tel" placeholder="082345678912..." id="phone-input">
+              <div class="errormsg">
+                <p id="errormsg-phone"></p>
+              </div>
+              
               <label for="address-input">Address</label>
               <textarea name="address-input" id="address-input" placeholder="Enter your address here..."></textarea>
-              
+              <div class="errormsg">
+                <p id="errormsg-address"></p>
+              </div>
+
               <label for="courier-select">Courier</label>
-              <select name="courier-select" required>
+              <select name="courier-select" id="courier-select" required>
                 <option value="-1" disabled selected hidden>-</option>
-                <option>Gojek</option>
-                <option>Grab</option>
-                <option>JNE</option>
-                <option>J&T</option>
+                <option value="1">Gojek</option>
+                <option value="2">Grab</option>
+                <option value="3">JNE</option>
+                <option value="4">J&T</option>
               </select>
+              <div class="errormsg">
+                <p id="errormsg-courier"></p>
+              </div>
+
               <label for="delivery-select">Delivery Time</label>
-              <select name="delivery-select" required>
+              <select name="delivery-select" id="delivery-select" required>
                 <option value="-1" disabled selected hidden>-</option>
-                <option>2</option>
-                <option>3</option>
+                <option value="1">2</option>
+                <option value="2">3</option>
               </select>
+              <div class="errormsg">
+                <p id="errormsg-delivery"></p>
+              </div>
               
-              <input type="checkbox" name="subs" id="subs">
-              <label for="subs">I want to subscribe to Bakersa's newsletter through email</label>
+              <div class="subs-check">
+                <input type="checkbox" name="subs" id="subs">
+                <label for="subs">I want to subscribe to Bakersa's newsletter through email</label>
+              </div>
               <input type="submit" id="submit-order" value="ORDER">
             </form>
           </div>

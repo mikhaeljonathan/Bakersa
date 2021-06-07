@@ -203,9 +203,18 @@ main hr {
   margin: 2rem 0;
 }
 
-/* CUSTOMER FORM*/
+/* CUSTOMER FORM */
 .customer-field {
   margin-bottom: 3.5rem;
+}
+
+.customer-field form > label {
+  margin-top: 2rem;
+  display: inline-block;
+}
+
+.customer-field form > label:first-child {
+  margin-top: 0;
 }
 
 .customer-field form > input,textarea,select {
@@ -215,7 +224,7 @@ main hr {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: none;
   width: 100%;  
-  margin: 1rem 0;
+  margin: 1rem 0 0;
 }
 
 .customer-field form > input,textarea,select::placeholder {
@@ -232,14 +241,30 @@ main hr {
 
 .customer-field form > select {
   width: 40%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  overflow: hidden;
+  background: url("../src/arrow.png ") no-repeat 89% 50%;
+  background-size: 0.5rem;  
 }
 
-.customer-field form > select:required:invalid {
-  color: gray;
+.customer-field form > select {
+  width: 40%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  overflow: hidden;
+  background: url("../src/arrow.png ") no-repeat 89% 50%;
+  background-size: 0.5rem;
 }
 
 #address-input {
   height: 22vh;
+}
+
+.subs-check {
+  margin-top: 2rem;
 }
 
 #subs {
@@ -267,4 +292,21 @@ main hr {
   width: 30%;
   position: absolute;
   right: 2rem;
+}
+
+/* ERROR MESASAGE */
+.errormsg {
+  margin-top: 0.5rem;
+}
+
+.errormsg p {
+  color: red;
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 500px) {
+  .customer-field form > select {
+    background-position: 97% 50%;
+  }
 }
