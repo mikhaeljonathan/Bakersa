@@ -60,6 +60,7 @@
     expandedNav.slideToggle("slow");
   });
 
+  // KALO GA DIBUAT GINI PAS DI MOBILE DROP DOWN EXTENDED TERUS KE DESKTOP BAKAL ANCUR
   window.addEventListener("resize", () => {
     expandedNav.css("display", `${window.innerWidth >= 500 ? "flex" : "none"}`);
   });

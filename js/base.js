@@ -32,4 +32,3 @@ $('.overlay-dialog').click(function(e){
         $('.overlay-dialog').css('visibility', 'hidden');
     }
 });
-

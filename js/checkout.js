@@ -1,5 +1,5 @@
 // GET THE ITEMS IN THE LOCAL STORAGE
-let curLocalStorage = localStorage.getItem('CART');
+let curLocalStorage = localStorage.getItem("CART");
 curLocalStorage = JSON.parse(curLocalStorage);
 
 // INITIALIZE TOTAL PRICE
@@ -7,8 +7,9 @@ let totalPrice = 0;
 
 // IF ITEMS ARE EMPTY
 if (curLocalStorage == undefined || curLocalStorage.length === 0) {
-    document.getElementsByTagName('main')[0].insertAdjacentHTML('afterbegin',
-        `
+  document.getElementsByTagName("main")[0].insertAdjacentHTML(
+    "afterbegin",
+    `
     <div class="empty-cart">
         <div class="overlay">
             <p>Your cart is empty :(</p>
@@ -16,35 +17,48 @@ if (curLocalStorage == undefined || curLocalStorage.length === 0) {
         </div>
     </div>
     `
-    );
-    
-    // HIDE ALL VIEWS
-    $('#cart-container').css('display', 'none');
-    $('#customer-info').css('display', 'none');
-    $('#cart-customer-divider').css('display', 'none');
+  );
 
-} else { // IF THERE ARE ITEMS IN LOCAL STORAGE
-    
-    for (let i = 0; i < curLocalStorage.length; i++) {
-        let cart = JSON.parse(curLocalStorage[i]);
-        let subTotal = cart.stock * cart.price;
-        totalPrice += subTotal;
+  // HIDE ALL VIEWS
+  $('main').css('display', 'block');
+  $("#cart-container").css("display", "none");
+  $("#customer-info").css("display", "none");
+  $("#cart-customer-divider").css("display", "none");
 
-        document.getElementById('carts').insertAdjacentHTML('beforeend',
-            `
+} else {
+  // IF THERE ARE ITEMS IN LOCAL STORAGE
+
+  for (let i = 0; i < curLocalStorage.length; i++) {
+    let cart = JSON.parse(curLocalStorage[i]);
+    let subTotal = cart.stock * cart.price;
+    totalPrice += subTotal;
+
+    // INSERT THE ITEM VIEWS
+    document.getElementById("carts").insertAdjacentHTML(
+      "beforeend",
+      `
         <div class="cart">
             <div class="cart-overlay">
+                ${
+                  cart.type === "bread"
+                    ? `
                 <p>Edit Amount</p>
                 <div class="edit-amount">
-                    <button class="amount-button" onclick="decrementAmount(${i})">-</button>
+                    <button class="amount-button" onclick="updateAmount(${i}, 'decrement')">-</button>
                     <p class="amount" id="amount-${i}">${cart.stock}</p>
-                    <button class="amount-button" onclick="incrementAmount(${i})">+</button>
-                </div>
+                    <button class="amount-button" onclick="updateAmount(${i})">+</button>
+                </div>`
+                    : `<button class="trash-cake" onclick="updateAmount(${i}, 'decrement')"><img src="../src/icons/trash-icon.png" alt="Trash" id="trash-icon"></button>`
+                }
             </div>
-            <img src="../src/${cart.type === 'bread' ? `breads/bread${cart.id}/1.jpg` : 'banners/custom-cake-banner.jpg'}" alt="Cart ${i}" />
+            <img src="../src/${
+              cart.type === "bread"
+                ? `breads/bread${cart.id}/1.jpg`
+                : "banners/custom-cake-banner.jpg"
+            }" alt="Cart ${i}" />
             <div class="cart-info">
                 <h3>${cart.name}</h3>
-                ${cart.type === 'bread' ? '' : `<p>${cart.message}</p>`}
+                ${cart.type === "bread" ? "" : `<p>${cart.message}</p>`}
                 <p id="subtotal-${i}"><span class="bold">Subtotal:</span> Rp ${subTotal},00</p>
             </div>
             <div class="quantity">
@@ -54,96 +68,114 @@ if (curLocalStorage == undefined || curLocalStorage.length === 0) {
             </div>
         </div>
         `
-        );
-    }
+    );
+  }
 
-    $('#total').html(`<span>Total:</span> Rp ${totalPrice},00`);
+  // DISPLAY TOTAL PRICE
+  $("#total").html(`<span>Total:</span> Rp ${totalPrice},00`);
 }
 
-$('.overlay-dialog').click(function (e) {
-    let classTarget = e.target.classList[0];
-    if (classTarget === 'overlay-dialog') {
-        $('.overlay-dialog').css('visibility', 'hidden');
-        $('#yes-clear-cart').css('display', 'none');
-        $('#yes-delete-item').css('display', 'none');
-    }
+// HIDE DIALOG WHEN CLICKING OUTSIDE
+$(".overlay-dialog").click(function (e) {
+  let classTarget = e.target.classList[0];
+  if (classTarget === "overlay-dialog") {
+    $(".overlay-dialog").css("visibility", "hidden");
+    $("#yes-clear-cart").css("display", "none");
+    $("#yes-delete-item").css("display", "none");
+  }
 });
 
-$('#clear-cart').click(function () {
-    $('.overlay-dialog').css('visibility', 'visible');
-    $('#yes-clear-cart').css('display', 'inline-block');
-    $('#dialog-message').html(`⚠️ Are you sure want to <strong>clear this cart</strong>?`);
-})
-
-$('#cancel').click(function () {
-    $('.overlay-dialog').css('visibility', 'hidden');
-    $('#yes-clear-cart').css('display', 'none');
-    $('#yes-delete-item').css('display', 'none');
+// CLEAR CART BUTTON
+$("#clear-cart").click(function () {
+  $(".overlay-dialog").css("visibility", "visible");
+  $("#yes-clear-cart").css("display", "inline-block");
+  $("#dialog-message").html(
+    `⚠️ Are you sure want to <strong>clear this cart</strong>?`
+  );
 });
 
-$('#yes-clear-cart').click(function () {
-    localStorage.clear();
-    window.location.reload();
+// CANCEL BUTTON IN DIALOG
+$("#cancel").click(function () {
+  $(".overlay-dialog").css("visibility", "hidden");
+  $("#yes-clear-cart").css("display", "none");
+  $("#yes-delete-item").css("display", "none");
 });
 
-function decrementAmount(idx) {
-    let amount = Number($(`#amount-${idx}`).html());
-    amount--;
+// YES BUTTON (CLEAR CART)
+$("#yes-clear-cart").click(function () {
+  localStorage.clear();
+  window.location.reload();
+});
 
-    if (amount === 0) {
-        showDeleteItemDialog(idx);
-        return;
-    }
+// UPDATE (INCREMENT/DECREMENT) AMOUNT OF PARTICULAR BREAD
+function updateAmount(idx, action = "increment") {
+  // TAKE THE CURRENT AMOUNT AND UPDATE IT
+  let amount = JSON.parse(curLocalStorage[idx]).stock;
+  amount += action === "increment" ? 1 : -1;
 
-    let curPrice = JSON.parse(JSON.parse(localStorage.getItem('CART'))[idx]).price;
-    totalPrice -= curPrice;
+  // IF THE AMOUNT 0, DELETE CORRESPONDING BREAD FROM THE CART
+  if (amount === 0) {
+    showDeleteItemDialog(idx);
+    return;
+  }
 
-    $(`#amount-${idx}`).html(amount);
-    $(`#cart-stock-${idx}`).html(amount);
-    $(`#subtotal-${idx}`).html(`<span class="bold">Subtotal:</span> Rp ${curPrice * amount},00`)
-    $('#total').html(`<span>Total:</span> Rp ${totalPrice},00`);
+  // GET THE PRICE AND SUBTRACT TOTALPRICE WITH THE PRICE
+  let curPrice = JSON.parse(
+    JSON.parse(localStorage.getItem("CART"))[idx]
+  ).price;
+  totalPrice -= curPrice;
 
-    updateAmount(amount, idx);
+  // UPDATE THE VIEWS
+  updateViews(idx, curPrice * amount, amount, totalPrice);
+
+  // UPDATE AMOUNT IN THE CART
+  updateInTheCart(amount, idx);
 }
 
-function incrementAmount(idx) {
-    let amount = Number($(`#amount-${idx}`).html());
-    amount++;
-
-    let curPrice = JSON.parse(JSON.parse(localStorage.getItem('CART'))[idx]).price;
-    totalPrice += curPrice;
-
-    $(`#amount-${idx}`).html(amount);
-    $(`#cart-stock-${idx}`).html(amount);
-    $(`#subtotal-${idx}`).html(`<span class="bold">Subtotal:</span> Rp ${curPrice * amount},00`)
-    $('#total').html(`<span>Total:</span> Rp ${totalPrice},00`);
-
-    updateAmount(amount, idx);
+function updateViews(idx, subTotal, amount, totalPrice) {
+  $(`#amount-${idx}`).html(amount);
+  $(`#cart-stock-${idx}`).html(amount);
+  $(`#subtotal-${idx}`).html(
+    `<span class="bold">Subtotal:</span> Rp ${subTotal},00`
+  );
+  $("#total").html(`<span>Total:</span> Rp ${totalPrice},00`);
 }
 
-function updateAmount(amount, idx) {
+function updateInTheCart(amount, idx) {
+  // TAKE THE BREAD OBJECT AND UPDATE THE BREAD STOCK
+  let bread = JSON.parse(curLocalStorage[idx]);
+  bread.stock = amount;
+  curLocalStorage[idx] = JSON.stringify(bread);
 
-    let bread = JSON.parse(curLocalStorage[idx]);
-    bread.stock = amount;
-    console.log(amount);
-    curLocalStorage[idx] = JSON.stringify(bread);
-
-    localStorage.setItem('CART', JSON.stringify(curLocalStorage));
+  // SET IT BACK TO THE LOCALSTORAGE
+  localStorage.setItem("CART", JSON.stringify(curLocalStorage));
 }
 
+// HANDLING THE DELETE ITEM DIALOG
 let soonToBeDeletedItemIdx = -1;
 function showDeleteItemDialog(idx) {
-    $('.overlay-dialog').css('visibility', 'visible');
-    $('#yes-delete-item').css('display', 'inline-block');
-    $('#dialog-message').html(`⚠️ Are you sure want to delete item: <strong>${JSON.parse(curLocalStorage[idx]).name}</strong> from your cart?`);
-    soonToBeDeletedItemIdx = idx;
+  // ASSIGN THE INDEX TO GLOBAL VARIABLE
+  soonToBeDeletedItemIdx = idx;
+
+  // SHOW THE DIALOG
+  let item = JSON.parse(curLocalStorage[idx]);
+  $(".overlay-dialog").css("visibility", "visible");
+  $("#yes-delete-item").css("display", "inline-block");
+  $("#dialog-message").html(
+    `⚠️ Are you sure want to delete item: <strong>${item.name} ${
+      item.type === "bread" ? "" : `(${item.message})`
+    }</strong> from your cart?`
+  );
 }
 
-$('#yes-delete-item').click(function () {
-    curLocalStorage.splice(soonToBeDeletedItemIdx, 1);
-    localStorage.setItem('CART', JSON.stringify(curLocalStorage));
+// YES BUTTON (DELETE ITEM) IN DIALOG
+$("#yes-delete-item").click(function () {
+  // DELETE THE OBJECT THAT WANT TO BE DELETED DIRECTLY IN THE ARRAY AND UPDATE IT TO THE LOCALSTORAGE
+  curLocalStorage.splice(soonToBeDeletedItemIdx, 1);
+  localStorage.setItem("CART", JSON.stringify(curLocalStorage));
 
-    window.location.reload();
+  // RELOAD THE PAGE TO REMOVE THE VIEW
+  window.location.reload();
 });
 
 // VALIDATION
@@ -157,113 +189,108 @@ let deliveryElement = document.getElementById("delivery-select");
 let formElement = document.getElementById("form");
 let errorName = document.getElementById("errormsg-name");
 let errorEmail = document.getElementById("errormsg-email");
-let errorPhone = document.getElementById("errormsg-phone")
-let errorAddress = document.getElementById("errormsg-address")
-let errorCourier = document.getElementById("errormsg-courier")
+let errorPhone = document.getElementById("errormsg-phone");
+let errorAddress = document.getElementById("errormsg-address");
+let errorCourier = document.getElementById("errormsg-courier");
 let errorDelivery = document.getElementById("errormsg-delivery");
 
 function checkName(name) {
-    if (name == null || name == "") {
-        return "⚠ Name must be filled out";
-    }
+  if (name == null || name === "") {
+    return "⚠ Name must be filled out";
+  }
 
-    return "";
+  return "";
 }
 
 function checkEmail(email) {
-    if (email == null || email == "") {
-        return "⚠ Email must be filled out";
-    }
-    else if (!email.endsWith(".com") && !email.endsWith(".co.id")) {
-        return "⚠ Email must ends with .com or .co.id"
-    }
+  if (email == null || email == "") {
+    return "⚠ Email must be filled out";
+  } else if (!email.endsWith(".com") && !email.endsWith(".co.id")) {
+    return "⚠ Email must ends with .com or .co.id";
+  }
 
-    return "";
+  return "";
 }
 
 function isAllNumber(text) {
-    for (let i = 0; i < text.length; i++) {
-        let c = text[i];
+  for (let i = 0; i < text.length; i++) {
+    let c = text[i];
 
-        if (isNaN(c) == true) {
-            return false;
-        }
+    if (isNaN(c) == true) {
+      return false;
     }
+  }
 
-    return true;
+  return true;
 }
 
 function checkPhone(phone) {
-    if (phone === null || phone === "") {
-        return "⚠ Phone must be filled out"
-    }
-    else if (!isAllNumber(phone)) {
-        return "⚠ Please input only numbers 0 - 9"
-    }
-    else if (phone.length < 11 || phone.length > 13 ) {
-        return "⚠ Phone length must beetwen 11 - 13"
-    }
+  if (phone === null || phone === "") {
+    return "⚠ Phone must be filled out";
+  } else if (!isAllNumber(phone)) {
+    return "⚠ Please input only numbers 0 - 9";
+  } else if (phone.length < 11 || phone.length > 13) {
+    return "⚠ Phone length must beetwen 11 - 13";
+  }
 
-    return "";
+  return "";
 }
 
 function checkAddress(address) {
-    if (address === null || address === "") {
-        return "⚠ Address must be filled out"
-    }
-    else if (address.length > 10) {
-        return "⚠ The max length of 10 characters is reached"
-    }
+  if (address === null || address === "") {
+    return "⚠ Address must be filled out";
+  }
 
-    return "";
+  return "";
 }
 
 function checkCourier(courier) {
-    if (courier === "-1") {
-        return "⚠ Please choose one"
-    }
+  if (courier === "-1") {
+    return "⚠ Please choose one";
+  }
 
-    return "";
+  return "";
 }
 
 function checkDelivery(delivery) {
-    if (delivery === "-1") {
-        return "⚠ Please choose one"
-    }
+  if (delivery === "-1") {
+    return "⚠ Please choose one";
+  }
 
-    return "";
+  return "";
 }
 
-formElement.addEventListener("submit", (e)=> {
-    e.preventDefault();
-    let finalValidation = "";
+formElement.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let finalValidation = "";
 
-    let name = nameElement.value;
-    errorName.innerHTML = checkName(name);
-    finalValidation += checkName(name);
+  let name = nameElement.value;
+  errorName.innerHTML = checkName(name);
+  finalValidation += checkName(name);
 
-    let email = emailElement.value;
-    errorEmail.innerHTML = checkEmail(email);
-    finalValidation += checkEmail(email);
+  let email = emailElement.value;
+  errorEmail.innerHTML = checkEmail(email);
+  finalValidation += checkEmail(email);
 
-    let phone = phoneElement.value;
-    errorPhone.innerHTML = checkPhone(phone);
-    finalValidation += checkPhone(phone);
+  let phone = phoneElement.value;
+  errorPhone.innerHTML = checkPhone(phone);
+  finalValidation += checkPhone(phone);
 
-    let address = addressElement.value;
-    errorAddress.innerHTML = checkAddress(address);
-    finalValidation += checkAddress(address);
+  let address = addressElement.value;
+  errorAddress.innerHTML = checkAddress(address);
+  finalValidation += checkAddress(address);
 
-    let courier = courierElement.value;
-    errorCourier.innerHTML = checkCourier(courier);
-    finalValidation += checkCourier(courier);
+  let courier = courierElement.value;
+  errorCourier.innerHTML = checkCourier(courier);
+  finalValidation += checkCourier(courier);
 
-    let delivery = deliveryElement.value;
-    errorDelivery.innerHTML = checkDelivery(delivery);
-    finalValidation += checkDelivery(delivery);
+  let delivery = deliveryElement.value;
+  errorDelivery.innerHTML = checkDelivery(delivery);
+  finalValidation += checkDelivery(delivery);
 
-    if (finalValidation === "") {
-        localStorage.clear();
-        window.location.reload();
-    }
+  if (finalValidation === "") {
+    localStorage.clear();
+    window.location.reload();
+  }
+
 });
