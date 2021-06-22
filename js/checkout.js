@@ -102,10 +102,11 @@ $("#cancel").click(function () {
 });
 
 // YES BUTTON (CLEAR CART)
-$("#yes-clear-cart").click(function () {
+function clearCart(){
   localStorage.clear();
   window.location.reload();
-});
+}
+$("#yes-clear-cart").click(clearCart);
 
 // UPDATE (INCREMENT/DECREMENT) AMOUNT OF PARTICULAR BREAD
 function updateAmount(idx, action = "increment") {
@@ -289,8 +290,16 @@ formElement.addEventListener("submit", (e) => {
   finalValidation += checkDelivery(delivery);
 
   if (finalValidation === "") {
-    localStorage.clear();
-    window.location.reload();
+    $('#dialog-message').html('Your order has been received. Thank you for shopping with us!')
+    $(".overlay-dialog").css("visibility", "visible");
+    $('#cancel').css('visibility', 'hidden');
+    $("#yes-clear-cart").css("display", "inline-block");
+    $(".overlay-dialog").click(function (e) {
+      let classTarget = e.target.classList[0];
+      if (classTarget === "overlay-dialog") {
+        clearCart();
+      }
+    });
   }
 
 });
