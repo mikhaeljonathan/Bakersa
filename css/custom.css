@@ -160,6 +160,11 @@ main section {
 }
 
 /* INPUT MESSAGE */
+#error-msg {
+  display: none;
+  color: red;
+}
+
 #cake-input-message {
   padding: 1rem;
   border-radius: 1rem;
@@ -226,10 +231,9 @@ main section {
 
   header h3 {
     font-size: 1rem;
-    letter-spacing: .25rem;
+    letter-spacing: 0.25rem;
   }
 }
-
 
 @media screen and (min-width: 700px) {
   .cake-faded {
