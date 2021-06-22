@@ -44,9 +44,33 @@ header h3 {
 }
 
 /* MAIN */
+#bouncing-logo {
+  display: none;
+}
+
 main {
   text-align: center;
   padding: 3rem;
+  position: relative;
+}
+
+#overlay-canvas {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  visibility: hidden;
+}
+
+canvas {
+  background-color: var(--light-choco);
+  border: 10px solid var(--dark-choco);
+  border-radius: 2rem;
 }
 
 main h2 {

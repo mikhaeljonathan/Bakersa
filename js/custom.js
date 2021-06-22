@@ -1,3 +1,62 @@
+// ----------------------------------------------------------- CANVAS
+// create the canvas
+const canvas = document.getElementById("canvas");
+canvas.height = 200;
+canvas.width = 200;
+const ctx = canvas.getContext("2d");
+
+// get the image
+const bouncingImage = document.getElementById('bouncing-logo');
+let imageSize = 100;
+
+// bouncing effect
+function random(min, max) {
+  if (min > max) return -1;
+  const range = max - min + 1;
+  return Math.floor(Math.random() * range) + min;
+}
+
+let x = random(0, canvas.height - imageSize);
+let y = random(0, canvas.width - imageSize);
+let speed = 2;
+let vx = speed;
+let vy = speed;
+
+let bouncingFrame;
+
+function bouncing() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(bouncingImage, x, y, imageSize, imageSize);
+
+  if (x > canvas.width - imageSize) vx = -2;
+  if (x < 0) vx = 2;
+  if (y > canvas.height - imageSize) vy = -2;
+  if (y < 0) vy = 2;
+
+  x += vx;
+  y += vy;
+
+  bouncingFrame = requestAnimationFrame(bouncing);
+}
+
+
+function setLoadingScreen(customMethod) {
+  // bouncing logo
+  let bouncingTimeout = bouncing();
+  $('#overlay-canvas').css('visibility', 'visible');
+
+  // bounces for 2 seconds
+  setTimeout(() => {
+    customMethod();
+    
+    clearTimeout(bouncingTimeout);
+    cancelAnimationFrame(bouncingFrame);
+    $('#overlay-canvas').css('visibility', 'hidden');
+  }, 2 * 1000);
+  
+}
+
+
 // --------------------------------------------------------- CHOOSE FLAVOR
 let flavors = ["strawberry", "vanilla", "chocolate"];
 let colors = ["#C54346", "#EAA52E", "#6D2821"];
@@ -50,9 +109,13 @@ $("#arrow-left-flavor").click(function () {
 
 // to the next section
 $("#choose-flavor-next").click(function () {
-  $("#choose-flavor").removeClass("section-active");
-  $("#add-cream").addClass("section-active");
-  displayCakeCream();
+
+  setLoadingScreen(() => {
+    $("#choose-flavor").removeClass("section-active");
+    $("#add-cream").addClass("section-active");
+    displayCakeCream();
+  });
+
 });
 
 let currentFlavor = 1;
@@ -111,16 +174,24 @@ $("#arrow-right-cream").click(function () {
 
 // go to the previous section (choose flavor)
 $("#add-cream-before").click(function () {
-  $("#add-cream").removeClass("section-active");
-  $("#choose-flavor").addClass("section-active");
-  displayCakeFlavor(currentFlavor);
+
+  setLoadingScreen(() => {
+    $("#add-cream").removeClass("section-active");
+    $("#choose-flavor").addClass("section-active");
+    displayCakeFlavor(currentFlavor);
+  })
+
 });
 
 // go to the next section (add message)
 $("#add-cream-next").click(function () {
-  $("#add-cream").removeClass("section-active");
-  $("#add-message").addClass("section-active");
-  displayCakeMessage();
+
+  setLoadingScreen(() => {
+    $("#add-cream").removeClass("section-active");
+    $("#add-message").addClass("section-active");
+    displayCakeMessage();
+  });
+
 });
 
 let isAddCream = true;
@@ -143,9 +214,13 @@ function displayCakeMessage() {
 
 // go to the previous section (add cream)
 $("#add-message-previous").click(function () {
-  $("#add-message").removeClass("section-active");
-  $("#add-cream").addClass("section-active");
-  displayCakeCream();
+
+  setLoadingScreen(() => {
+    $("#add-message").removeClass("section-active");
+    $("#add-cream").addClass("section-active");
+    displayCakeCream();
+  });
+  
 });
 
 function validMessage(message) {
@@ -169,9 +244,12 @@ $("#add-message-finish").click(function () {
     return;
   }
 
-  $("#add-message").removeClass("section-active");
-  $("#cake-finish").addClass("section-active");
-  displayCakeFinish();
+  setLoadingScreen(() => {
+    $("#add-message").removeClass("section-active");
+    $("#cake-finish").addClass("section-active");
+    displayCakeFinish();
+  });
+
 });
 
 let message = "";
@@ -200,9 +278,13 @@ function displayCakeFinish() {
 
 // go to the previous section
 $("#cake-finish-previous").click(function () {
-  $("#cake-finish").removeClass("section-active");
-  $("#add-message").addClass("section-active");
-  displayCakeFinish();
+
+  setLoadingScreen(() => {
+    $("#cake-finish").removeClass("section-active");
+    $("#add-message").addClass("section-active");
+    displayCakeFinish();
+  });
+  
 });
 
 function capitalize(string) {
