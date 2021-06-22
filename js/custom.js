@@ -6,7 +6,7 @@ canvas.width = 200;
 const ctx = canvas.getContext("2d");
 
 // get the image
-const bouncingImage = document.getElementById('bouncing-logo');
+const bouncingImage = document.getElementById("bouncing-logo");
 let imageSize = 100;
 
 // bouncing effect
@@ -39,23 +39,20 @@ function bouncing() {
   bouncingFrame = requestAnimationFrame(bouncing);
 }
 
-
 function setLoadingScreen(customMethod) {
   // bouncing logo
   let bouncingTimeout = bouncing();
-  $('#overlay-canvas').css('visibility', 'visible');
+  $("#overlay-canvas").css("visibility", "visible");
 
   // bounces for 2 seconds
   setTimeout(() => {
     customMethod();
-    
+
     clearTimeout(bouncingTimeout);
     cancelAnimationFrame(bouncingFrame);
-    $('#overlay-canvas').css('visibility', 'hidden');
+    $("#overlay-canvas").css("visibility", "hidden");
   }, 2 * 1000);
-  
 }
-
 
 // --------------------------------------------------------- CHOOSE FLAVOR
 let flavors = ["strawberry", "vanilla", "chocolate"];
@@ -109,13 +106,11 @@ $("#arrow-left-flavor").click(function () {
 
 // to the next section
 $("#choose-flavor-next").click(function () {
-
   setLoadingScreen(() => {
     $("#choose-flavor").removeClass("section-active");
     $("#add-cream").addClass("section-active");
     displayCakeCream();
   });
-
 });
 
 let currentFlavor = 1;
@@ -174,24 +169,20 @@ $("#arrow-right-cream").click(function () {
 
 // go to the previous section (choose flavor)
 $("#add-cream-before").click(function () {
-
   setLoadingScreen(() => {
     $("#add-cream").removeClass("section-active");
     $("#choose-flavor").addClass("section-active");
     displayCakeFlavor(currentFlavor);
-  })
-
+  });
 });
 
 // go to the next section (add message)
 $("#add-cream-next").click(function () {
-
   setLoadingScreen(() => {
     $("#add-cream").removeClass("section-active");
     $("#add-message").addClass("section-active");
     displayCakeMessage();
   });
-
 });
 
 let isAddCream = true;
@@ -214,13 +205,11 @@ function displayCakeMessage() {
 
 // go to the previous section (add cream)
 $("#add-message-previous").click(function () {
-
   setLoadingScreen(() => {
     $("#add-message").removeClass("section-active");
     $("#add-cream").addClass("section-active");
     displayCakeCream();
   });
-  
 });
 
 function validMessage(message) {
@@ -249,7 +238,6 @@ $("#add-message-finish").click(function () {
     $("#cake-finish").addClass("section-active");
     displayCakeFinish();
   });
-
 });
 
 let message = "";
@@ -278,13 +266,11 @@ function displayCakeFinish() {
 
 // go to the previous section
 $("#cake-finish-previous").click(function () {
-
   setLoadingScreen(() => {
     $("#cake-finish").removeClass("section-active");
     $("#add-message").addClass("section-active");
     displayCakeFinish();
   });
-  
 });
 
 function capitalize(string) {

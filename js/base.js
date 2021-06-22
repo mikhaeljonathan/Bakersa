@@ -22,8 +22,15 @@ breads.push(new Bread(8, 'Grissini Bread', 24000, 5, 'Somewhat similar to breads
 breads.push(new Bread(9, 'Soda Bread', 12000, 1, 'With ingredients that include buttermilk, salt, baking soda, and flour, this is a traditional type of bread in Ireland. It is also a bread that doesn’t need to be left alone for a while to rise, which means it can be made quickly and easily at any time.', true));
 
 // Load Nav and Footer for all pages
-$('#nav').load('/html/nav.html');   
-$('#footer').load('/html/footer.html');
+let expandedNav = $("#navbar-expanded");
+$("#hamburger-menu").click(function () {
+  expandedNav.slideToggle("slow");
+});
+
+// KALO GA DIBUAT GINI PAS DI MOBILE DROP DOWN EXTENDED TERUS KE DESKTOP BAKAL ANCUR
+window.addEventListener("resize", () => {
+  expandedNav.css("display", `${window.innerWidth >= 500 ? "flex" : "none"}`);
+});
 
 // OVERLAY DIALOG (close when user click outside the dialog)
 $('.overlay-dialog').click(function(e){
@@ -33,6 +40,7 @@ $('.overlay-dialog').click(function(e){
     }
 });
 
+// BUAT FORMAT UANG RUPIAH
 let numberFormat = new Intl.NumberFormat('id', {
     style: 'currency',
     currency: 'IDR',
