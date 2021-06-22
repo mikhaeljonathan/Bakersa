@@ -7,7 +7,7 @@ header {
   background-repeat: no-repeat;
   color: white;
   text-align: center;
-  font-family: 'Vollkorn', serif;
+  font-family: "Vollkorn", serif;
 }
 
 .overlay {
@@ -89,6 +89,7 @@ main {
 .image-slider {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .news-image {
@@ -109,11 +110,16 @@ main {
 }
 
 #arrow-right:hover {
-  content: url('../src/icons/arrow-right-fill.png');
+  content: url("../src/icons/arrow-right-fill.png");
 }
 
 #arrow-left:hover {
-  content: url('../src/icons/arrow-left-fill.png');
+  content: url("../src/icons/arrow-left-fill.png");
+}
+
+#news-overflow-left,
+#news-overflow-right {
+  display: none;
 }
 
 main hr {
@@ -134,17 +140,6 @@ main hr {
   margin-bottom: 2rem;
   font-size: 2rem;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* DESKTOP */
 
@@ -179,4 +174,22 @@ main hr {
     width: 60%;
   }
 
+}
+
+@media screen and (min-width: 1300px) {
+  #news-overflow-left,
+  #news-overflow-right {
+    display: inline-block;
+    position: absolute;
+    border-radius: 1rem;
+    height: 25rem;
+  }
+
+  #news-overflow-left {
+    left: -50%;
+  }
+
+  #news-overflow-right {
+    right: -50%;
+  }
 }

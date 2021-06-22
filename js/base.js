@@ -21,10 +21,9 @@ breads.push(new Bread(7, 'Bagels', 22500, 4, 'Bagels are usually boiled in water
 breads.push(new Bread(8, 'Grissini Bread', 24000, 5, 'Somewhat similar to breadsticks, Grissini is made of crisp, dry bread and are thin sticks that resemble a pencil. Native to Italy, these bread can be flavored any way you want them to be, so feel free to add herbs and spices of any type to liven up the flavor. They are mostly used as a before-dinner alternative to regular or garlic bread, but they can be eaten any way you wish.'));
 breads.push(new Bread(9, 'Soda Bread', 12000, 1, 'With ingredients that include buttermilk, salt, baking soda, and flour, this is a traditional type of bread in Ireland. It is also a bread that doesn’t need to be left alone for a while to rise, which means it can be made quickly and easily at any time.', true));
 
-// NAV BAR
-$('#hamburger-menu').click(function () {
-    $('#navbar-expanded').slideToggle('slow');
-});
+// Load Nav and Footer for all pages
+$('#nav').load('html/nav.html');
+$('#footer').load('html/footer.html');
 
 // OVERLAY DIALOG
 $('.overlay-dialog').click(function(e){
@@ -33,3 +32,4 @@ $('.overlay-dialog').click(function(e){
         $('.overlay-dialog').css('visibility', 'hidden');
     }
 });
+

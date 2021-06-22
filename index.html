@@ -6,118 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bakersa | Home</title>
     <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/breads.css">
+    <link rel="stylesheet" href="css/breads.css" />
     <link rel="stylesheet" href="css/index.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;700&family=Vollkorn:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;700&family=Vollkorn:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
   <body>
-
-      <!-- NAVIGATION BAR -->
-    <nav>
-      <div class="navbar-title">
-        <img
-          src="src/icons/hamburger-menu-icon.png"
-          alt="Menu"
-          id="hamburger-menu"
-        />
-        <div class="nav-item logo-title">
-          <img src="src/logo/logo-banner.png" alt="Logo" id="logo-banner" />
-        </div>
-      </div>
-
-      <div id="navbar-expanded">
-        <hr />
-        <a href="#">
-          <div class="nav-item" id="nav-home">
-            <img src="src/icons/home-icon.png" alt="Home" />
-            <p>Home</p>
-          </div>
-        </a>
-
-        <div class="dropdown">
-          <span class="nav-item">
-            <p>&nbsp; Products ▼ &nbsp;</p>
-          </span>
-          
-          <div class="products">
-            <hr />
-            <a href="html/classic.html">
-              <div class="nav-item" id="nav-classic">
-                <img src="src/icons/classic-icon.png" alt="Classic" />
-                <p>Classic Bread</p>
-              </div>
-            </a>
-  
-            <hr />
-            <a href="html/custom.html">
-              <div class="nav-item" id="nav-custom">
-                <img src="src/icons/custom-icon.png" alt="Custom" />
-                <p>Custom Cake</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        
-        
-        
-        <hr />
-        <a href="html/checkout.html">
-          <div class="nav-item hoverable" id="nav-checkout">
-            <img src="src/icons/checkout-icon.png" alt="Checkout" />
-            <p>Checkout</p>
-          </div>
-        </a>
-        
-        <hr />
-      </div>
-    </nav>
-
+    <!-- NAVIGATION BAR -->
+    <div id="nav"></div>
 
     <!-- HEADER -->
     <header>
-        <div class="overlay">
-            <img src="src/logo/logo-light.png" alt="Logo Light" class="logo-light"/>
-      <h1>Bakersa</h1>
-      <h2>~ Est. 2001 ~</h2>
-      <h3>Your favourite bakery in town</h3>
-      <div class="search-stores">
-        <img src="src/icons/search-icon.png" alt="Search" />
-        <input type="text" placeholder="Search your nearest local stores..." />
-      </div>
+      <div class="overlay">
+        <img
+          src="src/logo/logo-light.png"
+          alt="Logo Light"
+          class="logo-light"
+        />
+        <h1>Bakersa</h1>
+        <h2>~ Est. 2001 ~</h2>
+        <h3>Your favourite bakery in town</h3>
+        <div class="search-stores">
+          <img src="src/icons/search-icon.png" alt="Search" />
+          <input
+            type="text"
+            placeholder="Search your nearest local stores..."
+          />
         </div>
-        
+      </div>
     </header>
-
 
     <!-- MAIN -->
     <main>
-        <!-- NEWS -->
+      <!-- NEWS -->
       <section class="news">
         <h2>What's New</h2>
         <div class="image-slider">
+          <img src="src/news/news3.jpg" alt="" id='news-overflow-left'>
           <img
             src="src/icons/arrow-left-outline.png"
             alt="arrow-left"
             class="arrow"
             id="arrow-left"
           />
+          <img src="src/news/news0.jpg" alt="" class="news-image" />
           <img src="src/news/news1.jpg" alt="" class="news-image" />
           <img src="src/news/news2.jpg" alt="" class="news-image" />
-          <img src="https://picsum.photos/1200/600" alt="" class="news-image" />
-          <img src="https://picsum.photos/1400/700" alt="" class="news-image" />
+          <img src="src/news/news3.jpg" alt="" class="news-image" />
           <img
             src="src/icons/arrow-right-outline.png"
             alt="arrow-right"
             class="arrow"
             id="arrow-right"
           />
+          <img src="src/news/news1.jpg" alt="" id='news-overflow-right'>
         </div>
         <div class="dots">
-          <span class="dot" onclick="displayNews(0)"></span>
-          <span class="dot" onclick="displayNews(1)"></span>
-          <span class="dot" onclick="displayNews(2)"></span>
-          <span class="dot" onclick="displayNews(3)"></span>
+          <span class="dot" onclick="handleNews(0)"></span>
+          <span class="dot" onclick="handleNews(1)"></span>
+          <span class="dot" onclick="handleNews(2)"></span>
+          <span class="dot" onclick="handleNews(3)"></span>
         </div>
       </section>
       <hr />
@@ -125,7 +77,6 @@
       <!-- NEW BREADS -->
       <section class="new-breads">
         <h2>Our New Breads</h2>
-
         <div class="breads">
           <div class="bread" id="bread-more">
             <div class="dots">
@@ -136,25 +87,11 @@
             <h3>More</h3>
           </div>
         </div>
-        
       </section>
     </main>
 
     <!-- FOOTER -->
-    <footer>
-      <p>&copy; 2021 Bakersa</p>
-      <div class="socmed">
-        <a href="https://www.instagram.com/"
-          ><img src="src/icons/instagram.png" alt="Instagram"
-        /></a>
-        <a href="https://facebook.com"
-          ><img src="src/icons/facebook.png" alt="Facebook"
-        /></a>
-        <a href="https://twitter.com">
-          <img src="src/icons/twitter.png" alt="Twitter"
-        /></a>
-      </div>
-    </footer>
+    <div id="footer"></div>
 
     <script src="js/base.js"></script>
     <script src="js/index.js"></script>
