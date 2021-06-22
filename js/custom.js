@@ -213,9 +213,9 @@ function capitalize(string) {
 function displayFinishDialog(name, cream) {
   $(".overlay-dialog").css("visibility", "visible");
   $("#dialog-message").html(
-    `✔️ Your item: <strong>${name} x1</strong> is added to the cart successfully<br><br>Price: <strong>Rp ${
+    `✔️ Your item: <strong>${name} x1</strong> is added to the cart successfully<br><br>Price: <strong>${numberFormat.format(
       cream ? 110000 : 100000
-    },00</strong>.`
+    )}</strong>.`
   );
 }
 

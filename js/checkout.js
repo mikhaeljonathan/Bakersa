@@ -59,7 +59,7 @@ if (curLocalStorage == undefined || curLocalStorage.length === 0) {
             <div class="cart-info">
                 <h3>${cart.name}</h3>
                 ${cart.type === "bread" ? "" : `<p>${cart.message}</p>`}
-                <p id="subtotal-${i}"><span class="bold">Subtotal:</span> Rp ${subTotal},00</p>
+                <p id="subtotal-${i}"><span class="bold">Subtotal: </span>${numberFormat.format(subTotal)}</p>
             </div>
             <div class="quantity">
                 <div class="circle">
@@ -72,7 +72,7 @@ if (curLocalStorage == undefined || curLocalStorage.length === 0) {
   }
 
   // DISPLAY TOTAL PRICE
-  $("#total").html(`<span>Total:</span> Rp ${totalPrice},00`);
+  $("#total").html(`<span>Total: </span>${numberFormat.format(totalPrice)}`);
 }
 
 // HIDE DIALOG WHEN CLICKING OUTSIDE
@@ -137,9 +137,9 @@ function updateViews(idx, subTotal, amount, totalPrice) {
   $(`#amount-${idx}`).html(amount);
   $(`#cart-stock-${idx}`).html(amount);
   $(`#subtotal-${idx}`).html(
-    `<span class="bold">Subtotal:</span> Rp ${subTotal},00`
+    `<span class="bold">Subtotal: </span>${numberFormat.format(subTotal)}`
   );
-  $("#total").html(`<span>Total:</span> Rp ${totalPrice},00`);
+  $("#total").html(`<span>Total: </span>${numberFormat.format(totalPrice)}`);
 }
 
 function updateInTheCart(amount, idx) {

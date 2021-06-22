@@ -32,3 +32,9 @@ $('.overlay-dialog').click(function(e){
         $('.overlay-dialog').css('visibility', 'hidden');
     }
 });
+
+let numberFormat = new Intl.NumberFormat('id', {
+    style: 'currency',
+    currency: 'IDR',
+    userGrouping: false
+});
