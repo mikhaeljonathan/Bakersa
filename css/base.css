@@ -15,6 +15,7 @@ body {
   position: relative;
   font-family: 'Signika Negative', sans-serif;
   color: var(--dark-choco);
+  overflow-x: hidden;
 }
 
 a {

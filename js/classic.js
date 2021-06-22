@@ -1,3 +1,4 @@
+// loop over the breads on the database
 for (let i = 0; i < breads.length; i++){
     document.getElementsByClassName('breads')[0].insertAdjacentHTML('beforeend', 
     `<div class="bread" onclick="goDetail(${i})">
@@ -13,6 +14,7 @@ for (let i = 0; i < breads.length; i++){
     </div>`);
 }
 
+// one of the breads is clicked
 function goDetail(idx){
     window.location.href = `detail.html?id=${idx}`;
 }

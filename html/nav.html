@@ -61,6 +61,6 @@
   });
 
   window.addEventListener("resize", () => {
-    expandedNav.css("display", `${window.innerWidth > 500 ? "flex" : "none"}`);
+    expandedNav.css("display", `${window.innerWidth >= 500 ? "flex" : "none"}`);
   });
 </script>

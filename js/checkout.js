@@ -1,9 +1,13 @@
+// GET THE ITEMS IN THE LOCAL STORAGE
 let curLocalStorage = localStorage.getItem('CART');
 curLocalStorage = JSON.parse(curLocalStorage);
+
+// INITIALIZE TOTAL PRICE
 let totalPrice = 0;
 
+// IF ITEMS ARE EMPTY
 if (curLocalStorage == undefined || curLocalStorage.length === 0) {
-    document.getElementById('carts').insertAdjacentHTML('afterbegin',
+    document.getElementsByTagName('main')[0].insertAdjacentHTML('afterbegin',
         `
     <div class="empty-cart">
         <div class="overlay">
@@ -13,13 +17,14 @@ if (curLocalStorage == undefined || curLocalStorage.length === 0) {
     </div>
     `
     );
+    
+    // HIDE ALL VIEWS
+    $('#cart-container').css('display', 'none');
+    $('#customer-info').css('display', 'none');
+    $('#cart-customer-divider').css('display', 'none');
 
-    $('.title').css('display', 'none');
-    $('#total').css('display', 'none');
-    $('.customer-field').css('display', 'none');
-
-} else {
-
+} else { // IF THERE ARE ITEMS IN LOCAL STORAGE
+    
     for (let i = 0; i < curLocalStorage.length; i++) {
         let cart = JSON.parse(curLocalStorage[i]);
         let subTotal = cart.stock * cart.price;

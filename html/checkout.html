@@ -15,6 +15,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
+
+    <!-- OVERLAY DIALOG -->
     <div class="overlay-dialog">
       <div class="dialog">
         <p id="dialog-message"></p>
@@ -31,7 +33,7 @@
 
     <!-- MAIN -->
     <main>
-      <div class="cart-container">
+      <div id="cart-container">
         <div class="title">
           <h2>Cart</h2>
           <button id="clear-cart">Clear</button>
@@ -39,9 +41,9 @@
         <div id="carts"></div>
         <p id="total"></p>
       </div>
-      <hr />
+      <hr id="cart-customer-divider"/>
 
-      <div class="customer-info">
+      <div id="customer-info">
         <div class="title">
           <h2>Customer Information</h2>
         </div>

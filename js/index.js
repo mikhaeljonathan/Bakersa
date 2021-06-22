@@ -1,11 +1,4 @@
 // IMAGE SLIDER
-$("#arrow-left").click(function () {
-  handleNews(currentNews - 1);
-});
-
-$("#arrow-right").click(function () {
-  handleNews(currentNews + 1);
-});
 
 // get the images and dots
 let slides = document.getElementsByClassName("news-image");
@@ -48,14 +41,35 @@ let showOverflow = function (position, n) {
   );
 };
 
-let handleNews = function (n) {
+let handleNews = function (n, restartInterval = true) {
   currentNews = getN(n);
   hideAll();
   showNews(currentNews);
 
   showOverflow("left", getN(n - 1));
   showOverflow("right", getN(n + 1));
+
+  if (!restartInterval) return;
+  clearInterval(autoDisplay);
+  autoDisplay = returnInterval(5);
 };
+
+let returnInterval = function(sec) {
+  return setInterval(() => {
+    handleNews(currentNews + 1, false);
+  }, sec * 1000);
+};
+
+let autoDisplay = returnInterval(5);
+
+$("#arrow-left").click(function () {
+  handleNews(currentNews - 1);
+});
+
+$("#arrow-right").click(function () {
+  handleNews(currentNews + 1);
+});
+
 
 // BREADS (only showing the new breads)
 for (let i = 0; i < breads.length; i++) {
