@@ -15,7 +15,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-
     <!-- OVERLAY DIALOG -->
     <div class="overlay-dialog">
       <div class="dialog">
@@ -41,7 +40,8 @@
         <div id="carts"></div>
         <p id="total"></p>
       </div>
-      <hr id="cart-customer-divider"/>
+
+      <hr id="cart-customer-divider" />
 
       <div id="customer-info">
         <div class="title">
@@ -62,7 +62,7 @@
             <label for="email-input">Email</label>
             <input
               type="text"
-              placeholder="someone@example.com..."
+              placeholder="someone@example.com"
               id="email-input"
             />
             <div class="errormsg">
@@ -70,7 +70,7 @@
             </div>
 
             <label for="phone-input">Phone</label>
-            <input type="tel" placeholder="082345678912..." id="phone-input" />
+            <input type="tel" placeholder="0-XXXX-XXXX-XXX" id="phone-input" />
             <div class="errormsg">
               <p id="errormsg-phone"></p>
             </div>
@@ -100,8 +100,10 @@
             <label for="delivery-select">Delivery Time</label>
             <select name="delivery-select" id="delivery-select" required>
               <option value="-1" disabled selected hidden>-</option>
-              <option value="1">2</option>
-              <option value="2">3</option>
+              <option value="1">10.30</option>
+              <option value="2">13.00</option>
+              <option value="3">15.00</option>
+              <option value="4">17.00</option>
             </select>
             <div class="errormsg">
               <p id="errormsg-delivery"></p>

@@ -84,7 +84,7 @@ for (let i = 0; i < breads.length; i++) {
         <img src="src/breads/bread${id}/1.jpg" alt="${curBread.name}" class="bread-image"/>
         <div class="bread-info">
             <h3>${curBread.name}</h3>
-            <p>Rp ${curBread.price},00</p>
+            <p>${numberFormat.format(curBread.price)}</p>
         </div>
         <div class="bread-seemore">
             <p class="seemore-text">See<br>more</p>
