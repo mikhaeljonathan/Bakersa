@@ -22,10 +22,10 @@ breads.push(new Bread(8, 'Grissini Bread', 24000, 5, 'Somewhat similar to breads
 breads.push(new Bread(9, 'Soda Bread', 12000, 1, 'With ingredients that include buttermilk, salt, baking soda, and flour, this is a traditional type of bread in Ireland. It is also a bread that doesn’t need to be left alone for a while to rise, which means it can be made quickly and easily at any time.', true));
 
 // Load Nav and Footer for all pages
-$('#nav').load('html/nav.html');
-$('#footer').load('html/footer.html');
+$('#nav').load('/html/nav.html');   
+$('#footer').load('/html/footer.html');
 
-// OVERLAY DIALOG
+// OVERLAY DIALOG (close when user click outside the dialog)
 $('.overlay-dialog').click(function(e){
     let classTarget = e.target.classList[0];
     if (classTarget === 'overlay-dialog') {

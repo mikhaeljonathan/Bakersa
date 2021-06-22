@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bakersa</title>
     <link rel="stylesheet" href="../css/base.css" />
-    <link rel="stylesheet" href="../css/detail.css">
+    <link rel="stylesheet" href="../css/detail.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;700&family=Vollkorn:wght@400;700&display=swap"
@@ -25,98 +25,30 @@
       </div>
     </div>
 
-      <!-- NAVBAR -->
-    <nav>
-      <div class="navbar-title">
-        <img
-          src="../src/icons/hamburger-menu-icon.png"
-          alt="Menu"
-          id="hamburger-menu"
-        />
-        <div class="nav-item logo-title">
-          <img src="../src/logo/logo-banner.png" alt="Logo" id="logo-banner" />
-        </div>
-      </div>
-
-      <div id="navbar-expanded">
-        <hr />
-        <a href="../index.html">
-          <div class="nav-item" id="nav-home">
-            <img src="../src/icons/home-icon.png" alt="Home" />
-            <p>Home</p>
-          </div>
-        </a>
-
-        <div class="dropdown">
-          <span class="nav-item">
-            <p>&nbsp; Products ▼ &nbsp;</p>
-          </span>
-
-          <div class="products">
-            <hr />
-            <a href="classic.html">
-              <div class="nav-item" id="nav-classic">
-                <img src="../src/icons/classic-icon.png" alt="Classic" />
-                <p>Classic Bread</p>
-              </div>
-            </a>
-
-            <hr />
-            <a href="custom.html">
-              <div class="nav-item" id="nav-custom">
-                <img src="../src/icons/custom-icon.png" alt="Custom" />
-                <p>Custom Cake</p>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <hr />
-        <a href="checkout.html">
-          <div class="nav-item hoverable" id="nav-checkout">
-            <img src="../src/icons/checkout-icon.png" alt="Checkout" />
-            <p>Checkout</p>
-          </div>
-        </a>
-
-        <hr />
-      </div>
-    </nav>
+    <!-- NAVBAR -->
+    <div id="nav"></div>
 
     <!-- MAIN -->
     <main id="main">
-        <div id="content">
-          <div class="order">
-            <h3>Buy how many breads?</h3>
-            <div class="stocks">
-                <button onclick="decrement()">-</button>
-                <p id="stock">0</p>
-                <button onclick="increment()">+</button>
-            </div>
-            <h3>Subtotal</h3>
-            <p id="subtotal">Rp 0,00</p>
-            <button id="add-to-cart" class="disabled-button">Add to Cart</button>
+      <div id="content">
+        <div class="order">
+          <h3>Buy how many breads?</h3>
+          <div class="stocks">
+            <button onclick="decrement()">-</button>
+            <p id="stock">0</p>
+            <button onclick="increment()">+</button>
           </div>
+          <h3>Subtotal</h3>
+          <p id="subtotal">Rp 0,00</p>
+          <button id="add-to-cart" class="disabled-button">Add to Cart</button>
         </div>
-    </main> 
+      </div>
+    </main>
 
     <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2021 Bakersa</p>
-        <div class="socmed">
-          <a href="https://www.instagram.com/"
-            ><img src="../src/icons/instagram.png" alt="Instagram"
-          /></a>
-          <a href="https://facebook.com"
-            ><img src="../src/icons/facebook.png" alt="Facebook"
-          /></a>
-          <a href="https://twitter.com">
-            <img src="../src/icons/twitter.png" alt="Twitter"
-          /></a>
-        </div>
-      </footer>
+    <div id="footer"></div>
 
-      <script src="../js/base.js"></script>
-      <script src="../js/detail.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../js/detail.js"></script>
   </body>
 </html>
