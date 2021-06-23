@@ -55,12 +55,19 @@ for (let i = 0; i < 5; i++) {
     );
 }
 
+function displaySubtotal() {
+    $('#subtotal').html(`Subtotal: <strong>${numberFormat.format(stock * curBread.price)}</strong>`)
+}
+
 function updateAmount(method = "increment") {
   if (method === "increment") stock++;
   else if (stock > 0) stock--;
 
   // update the stock text
   $("#stock").html(stock);
+
+  // display subtotal
+  displaySubtotal();
 
   // can't add to cart if the stock is 0
   $("#add-to-cart")
@@ -145,3 +152,4 @@ $("#go-to-checkout-page").click(function () {
 });
 
 let stock = 0;
+displaySubtotal();

@@ -86,10 +86,10 @@ main h3 {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.order h3,
-#subtotal,
-.order br {
-  display: none;
+#subtotal {
+    align-self: center;
+    padding-left: 2rem;
+    display: none;
 }
 
 @media screen and (min-width: 800px) {
@@ -128,11 +128,6 @@ main h3 {
     justify-content: center;
   }
 
-  #image-picker button {
-      padding: 0;
-      margin: 0;
-  }
-
   #image-picker img {
     width: 30%;
     margin: 0 0.5rem;
@@ -149,5 +144,8 @@ main h3 {
     border-color: var(--dark-choco) !important;
   }
 
+  #subtotal {
+    display: inline-block;
+  }
 
 }
