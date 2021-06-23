@@ -6,7 +6,6 @@ canvas.width = 200;
 const ctx = canvas.getContext("2d");
 
 // get the image
-// const bouncingImage = document.getElementById("bouncing-logo");
 const bouncingImage = new Image();
 bouncingImage.src = "../src/logo/logo-fill.png";
 let imageSize = 100;
@@ -52,7 +51,6 @@ function setLoadingScreen(customMethod) {
   setTimeout(() => {
     customMethod();
 
-    clearTimeout(bouncingTimeout);
     cancelAnimationFrame(bouncingFrame);
     $("#overlay-canvas").css("visibility", "hidden");
   }, 2 * 1000);
