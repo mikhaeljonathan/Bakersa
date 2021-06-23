@@ -86,14 +86,11 @@
     <main id="main">
       <div id="content">
         <div class="order">
-          <h3>Buy how many breads?</h3>
           <div class="stocks">
-            <button onclick="decrement()">-</button>
+            <button onclick="updateAmount('decrement')">-</button>
             <p id="stock">0</p>
-            <button onclick="increment()">+</button>
+            <button onclick="updateAmount('increment')">+</button>
           </div>
-          <h3>Subtotal</h3>
-          <p id="subtotal">Rp 0,00</p>
           <button id="add-to-cart" class="disabled-button">Add to Cart</button>
         </div>
       </div>
