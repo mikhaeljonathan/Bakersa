@@ -8,7 +8,7 @@ const ctx = canvas.getContext("2d");
 // get the image
 // const bouncingImage = document.getElementById("bouncing-logo");
 const bouncingImage = new Image();
-bouncingImage.src = '../src/logo/logo-fill.png';
+bouncingImage.src = "../src/logo/logo-fill.png";
 let imageSize = 100;
 
 // bouncing effect
@@ -28,9 +28,9 @@ let bouncingFrame;
 
 function bouncing() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  bouncingImage.onload = function() {
-    ctx.drawImage(bouncingImage, x, y, imageSize, imageSize);
-  }
+  // bouncingImage.addEventListener('load', function() {
+  ctx.drawImage(bouncingImage, x, y, imageSize, imageSize);
+  // })
 
   if (x > canvas.width - imageSize) vx = -speed;
   if (x < 0) vx = speed;
