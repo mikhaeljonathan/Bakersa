@@ -44,7 +44,7 @@ function bouncing() {
 
 function setLoadingScreen(customMethod) {
   // bouncing logo
-  let bouncingTimeout = bouncing();
+  bouncing();
   $("#overlay-canvas").css("visibility", "visible");
 
   // bounces for 2 seconds
