@@ -259,7 +259,7 @@ select {
   -moz-appearance: none;
   appearance: none;
   overflow: hidden;
-  background: url("../src/arrow.png") no-repeat 89% 50%;
+  background: url("../src/icons/arrow.png") no-repeat 89% 50%;
   background-size: 0.5rem;
 }
 
