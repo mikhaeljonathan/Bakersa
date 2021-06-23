@@ -27,7 +27,7 @@ document.getElementById("content").insertAdjacentHTML(
   `
 <div class="information">
     <h2>${curBread.name}</h2>
-    <h3>Rp ${curBread.price},00</h3>
+    <h3>${numberFormat.format(curBread.price)}</h3>
     <div class="rating">
     </div>
     <p>${curBread.desc}</p>
