@@ -255,6 +255,7 @@ function displayCakeFinish() {
     cakeFinish[i].classList.remove("cake-active");
   }
   $(`#${curFLavorName}-cake-finish`).addClass("cake-active");
+  $("#error-msg").css("display", "none");
 
   // cream
   $("#cake-cream-finish").css("opacity", `${isAddCream ? "1" : "0"}`);
