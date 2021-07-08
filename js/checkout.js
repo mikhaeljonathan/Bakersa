@@ -124,7 +124,8 @@ function updateAmount(idx, action = "increment") {
   let curPrice = JSON.parse(
     JSON.parse(localStorage.getItem("CART"))[idx]
   ).price;
-  totalPrice -= curPrice;
+  if (action === 'increment') totalPrice += curPrice;
+  else totalPrice -= curPrice;
 
   // UPDATE THE VIEWS
   updateViews(idx, curPrice * amount, amount, totalPrice);
